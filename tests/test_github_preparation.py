@@ -16,8 +16,8 @@ class GitHubPreparationTests(unittest.TestCase):
         names = release_alpha.inputs(ROOT, 'source')
         for name in ('LICENSE', 'THIRD_PARTY_NOTICES.md', 'licenses/ImproveGame-MIT.txt',
                      'licenses/llama.cpp-MIT.txt', 'licenses/Qwen3-Apache-2.0.txt',
-                     'DESIGN.md', 'docs/playtest.md', 'docs/demo-fixes-0.10.34.md', 'docs/architecture.md',
-                     'docs/github-preparation.md', 'docs/wiki-v010-provenance.json', 'scripts/prepare_github.py',
+                     'DESIGN.md', 'docs/playtest.md', 'docs/internal/demo-fixes-0.10.34.md', 'docs/architecture.md',
+                     'docs/internal/github-preparation.md', 'docs/wiki-v010-provenance.json', 'scripts/prepare_github.py',
                      '.github/workflows/ci.yml', 'tests/fixtures/arena-native-projection.json'):
             self.assertIn(name, names)
         for name in ('.env', '.git/config', 'artifacts/install-0.10.34.json', 'evals/report.md',
@@ -42,6 +42,17 @@ class GitHubPreparationTests(unittest.TestCase):
                          'artifacts/recording.mp4', 'notes.jsonl', 'wiki.db', 'weights.gguf', '../outside.py'):
                 with self.subTest(name=name):
                     self.assertEqual(github.review_files(root, [name])[0]['rule'], 'private-input')
+
+    def test_demo_gif_exception_is_limited_to_one_checked_public_asset(self):
+        with tempfile.TemporaryDirectory() as folder:
+            root = Path(folder)
+            (root / 'assets').mkdir()
+            (root / 'assets/demo-preview.gif').write_bytes(b'GIF89a' + b'\0' * 16)
+            self.assertEqual(github.review_files(root, ['assets/demo-preview.gif']), [])
+            (root / 'assets/demo-preview.gif').write_bytes(b'not-a-gif')
+            self.assertEqual(github.review_files(root, ['assets/demo-preview.gif'])[0]['rule'], 'unexpected-demo-image')
+            (root / 'assets/unreviewed.gif').write_bytes(b'GIF89a' + b'\0' * 16)
+            self.assertEqual(github.review_files(root, ['assets/unreviewed.gif'])[0]['rule'], 'unexpected-demo-image')
 
     def test_links_must_exist_in_the_export_not_just_in_the_worktree(self):
         with tempfile.TemporaryDirectory() as folder:

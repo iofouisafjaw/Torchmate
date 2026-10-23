@@ -4,7 +4,7 @@ The owner authorized a history-free GitHub source Alpha on 2026-10-23. Windows
 binary releases remain in preparation. Build and packaging scripts do not upload or push.
 
 For the current 0.10.34 public-source preparation, use
-[the history-free export workflow](github-preparation.md). The owner selected [MIT](../LICENSE) on 2026-10-23 for the project's own
+[the history-free export workflow](github-preparation.md). The owner selected [MIT](../../LICENSE) on 2026-10-23 for the project's own
 work; third-party terms and historical upstream limitations remain separate. Local installation and automatic checks have
 passed, but the requested gameplay retest and recording were cancelled; neither
 native acceptance nor clean-Windows acceptance has been marked complete.
@@ -18,7 +18,7 @@ native acceptance nor clean-Windows acceptance has been marked complete.
 5. Wiki databases, cached pages, player/world saves, raw local experiment logs and `.env` are excluded. Wiki importers preserve their own source-specific metadata; no database is silently installed by Alpha setup.
 6. The inherited repository tracks `.env`. No contents were printed or exported during this audit. A direct push of that Git history is blocked pending review; `.gitignore` alone does not remove it. Do not use `git archive HEAD` as an Alpha export.
 
-Machine-readable evidence and links: [`release/license-audit.json`](../release/license-audit.json). An unsent permission request draft is available in [`authorization-request-draft.md`](authorization-request-draft.md). The project MIT license covers only rights held by its contributors; third-party terms remain in force. Technical replacement does not authorize historical versions, Git history or previous private packages.
+Machine-readable evidence and links: [`release/license-audit.json`](../../release/license-audit.json). Permission has not been obtained; see the public licensing status. Correspondence drafts are kept outside the public source inventory. The project MIT license covers only rights held by its contributors; third-party terms remain in force. Technical replacement does not authorize historical versions, Git history or previous private packages.
 
 ## Local preparation
 

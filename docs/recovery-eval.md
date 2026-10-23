@@ -88,3 +88,5 @@ python scripts/analyze_recovery_eval.py benchmarks/recovery/20261019-recovery-de
 ```
 
 本机历史验证摘要为 `tests/verification-recovery-model-eval.json`，不随源码快照分发。2,418项核心检查、59项生产桥接检查、44项评测检查、30项Python测试和41项编译接线检查通过；模组编译／打包通过，保留4条既有可读性警告。版本0.10.27。
+
+新增的规则／未任务微调4B／现有14B跨任务成对状态诊断，见[成对恢复评测](paired-recovery-eval.md)。它是另一套探索性诊断，不与上述历史闭环消融合并，也不覆盖实机验收。

@@ -584,10 +584,10 @@
       "sha256": "575d22884a3f39844ca86a2e00a587586662f723ea859f85123aff4878823093"
     },
     "README.md": {
-      "sha256": "ba25d88d12bf28fcd1d4b839d3bb2f9bf9d2cdb8db5b28990289e2a2618760b9"
+      "sha256": "b12a65c1d3b35fd0adeea22285aad5a0a888fe4596c9be8c26287818e88bee9e"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "sha256": "19a3aa520658996597bb359536a6851989d25ea7ef895704cc3f5f404b49a17b"
+      "sha256": "06477c4a641d1766635b1e54dda598802bf4bb8c8d2d7c4a4c7f104897d8f280"
     },
     "TerrarAI.cs": {
       "sha256": "76ad7f0147460171860e0295c9522fd54373096788bac1571a6b3dc63b51e093"
@@ -621,6 +621,9 @@
     },
     "release/config-compatibility.json": {
       "sha256": "64c8ef2612000463bcaaafafa79381e2cf8216a2bc85c634ec37906b6b7bac07"
+    },
+    "scripts/analyze_paired_recovery.py": {
+      "sha256": "3a7a369a893ed2bfb7a1435b59300d7166d85299872a7bb20adb29ab9634d60b"
     },
     "scripts/analyze_recovery_eval.py": {
       "sha256": "411213a49578951d18365de3afa59b1c8b6e5514c106237e79610984d86763b0"
@@ -671,10 +674,10 @@
       "sha256": "42ba26cbf61eb6df2be3d9cddbe69910515ffffc7b9cc8b7d49daea2f477c819"
     },
     "scripts/prepare_github.py": {
-      "sha256": "64c6ba63906515e857eb630cfe10c4859d5ebd0961d56e3bde9cf74058dbfba5"
+      "sha256": "e65468d6b964b5b21c69a11791e21838d8c676fae98eb435d4a9977b75c4e250"
     },
     "scripts/release_alpha.py": {
-      "sha256": "816cf5584fea25d8f15471f6a274deb3b83de5b8b7430383872dac4edd4037c2"
+      "sha256": "c2b289c743a367a61f4ee70a816d73da6713afe07e4e8f1cf5a9a967c2d33e9c"
     },
     "scripts/release_support.py": {
       "sha256": "463dcb9ec5f4424ca6a3953445e124c1c43b012a6a04b687f5ee0811e6ec44f4"
@@ -684,6 +687,9 @@
     },
     "scripts/run_evals.py": {
       "sha256": "d69039341808b0359358d565a52bcbf1c25396f9bd02b3260dccf0b8ab1d4b80"
+    },
+    "scripts/run_paired_recovery_eval.py": {
+      "sha256": "a8f659e0bbb639cadf773aa5c8394fa94265a623791c6ce941e098773b548c23"
     },
     "scripts/setup_windows.py": {
       "sha256": "8fef3c672aaaefd44a7b13e3361ad903e3438c11577da5e0d1df22494d3587bb"

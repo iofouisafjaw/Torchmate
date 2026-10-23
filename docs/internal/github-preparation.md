@@ -1,7 +1,7 @@
 # GitHub 源码上传准备
 
-所有者已于2026-10-23选择 [MIT许可证](../LICENSE)，版权署名为 `2026 TerrarAI contributors`，并授权向 `iofouisafjaw/Torchmate`（原名 `iofouisafjaw/TerrarAI`） 公开上传干净源码。Windows 二进制版仍待验收；旧 Git 历史和私用准备包不在上传范围。
-当前源码与依赖来源记录见 [授权状态](../LICENSE_STATUS.md) 和 [第三方声明](../THIRD_PARTY_NOTICES.md)。
+所有者已于2026-10-23选择 [MIT许可证](../../LICENSE)，版权署名为 `2026 TerrarAI contributors`，并授权向 `iofouisafjaw/Torchmate`（原名 `iofouisafjaw/TerrarAI`） 公开上传干净源码。Windows 二进制版仍待验收；旧 Git 历史和私用准备包不在上传范围。
+当前源码与依赖来源记录见 [授权状态](../../LICENSE_STATUS.md) 和 [第三方声明](../../THIRD_PARTY_NOTICES.md)。
 
 ## 已整理的内容
 

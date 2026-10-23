@@ -47,6 +47,10 @@ def review_files(root, names):
         raw = path.read_bytes()
         if len(raw) > 2_000_000:
             findings.append({'file': name, 'rule': 'unexpected-large-source-file'})
+        if rel.suffix.lower() == '.gif':
+            if name != 'assets/demo-preview.gif' or raw[:6] not in (b'GIF87a', b'GIF89a'):
+                findings.append({'file': name, 'rule': 'unexpected-demo-image'})
+            continue
         if rel.suffix.lower() == '.png':
             continue
         try:

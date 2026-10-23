@@ -1,0 +1,11 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup><OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework><Nullable>enable</Nullable><ImplicitUsings>enable</ImplicitUsings></PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../../Content/Companion/*.cs" Link="Core/%(Filename)%(Extension)" />
+    <Compile Include="../../evals/FakeWorld.cs" Link="Evals/FakeWorld.cs" />
+    <Compile Include="../../evals/RecoveryBenchmark.cs" Link="Evals/RecoveryBenchmark.cs" />
+    <Compile Include="../../evals/RecoveryFixture.cs" Link="Evals/RecoveryFixture.cs" />
+    <Compile Include="../../evals/PairedRecoveryFixture.cs" Link="Evals/PairedRecoveryFixture.cs" />
+    <Compile Include="../../evals/PairedRecoveryBenchmark.cs" Link="Evals/PairedRecoveryBenchmark.cs" />
+  </ItemGroup>
+</Project>

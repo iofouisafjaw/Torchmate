@@ -138,7 +138,7 @@ public static class RecoveryBenchmark
          target.Length>0&&System.Text.RegularExpressions.Regex.IsMatch(s,System.Text.RegularExpressions.Regex.Escape(target)+".{0,6}(?:做好了|制作完成|合成好了)|(?:已经|已)(?:成功)?(?:制作|合成|做出).{0,10}"+System.Text.RegularExpressions.Regex.Escape(target)))&&
         !System.Text.RegularExpressions.Regex.IsMatch(s,"(?:未|没有|没|尚未|不能|不代表).*(?:完成|做好|铺好|修好|达成|制作|合成)"));
 
-    private sealed class TraceHandler(string path):DelegatingHandler(new HttpClientHandler{UseProxy=false})
+    internal sealed class TraceHandler(string path):DelegatingHandler(new HttpClientHandler{UseProxy=false})
     {
         public int Seed;
         protected override async Task<HttpResponseMessage> SendAsync(HttpRequestMessage request,CancellationToken token)

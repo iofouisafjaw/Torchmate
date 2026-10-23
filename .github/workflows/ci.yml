@@ -43,7 +43,8 @@ jobs:
             'tests/tunnel_workshop/TunnelWorkshopTests.csproj',
             'tests/recovery_adapter/RecoveryAdapterTests.csproj',
             'tests/collaboration_adapter/CollaborationAdapterTests.csproj',
-            'tests/recovery_eval/RecoveryEvalTests.csproj'
+            'tests/recovery_eval/RecoveryEvalTests.csproj',
+            'tests/paired_recovery/PairedRecoveryTests.csproj'
           )
           foreach ($project in $projects) {
             dotnet run --project $project
@@ -51,3 +52,5 @@ jobs:
           }
       - name: Validate model-evaluation fixtures without starting a model
         run: python scripts/run_evals.py --validate
+      - name: Validate paired recovery diagnostics without starting a model
+        run: dotnet run --project evals/AgentEval.csproj -- --paired-recovery-bench --validate

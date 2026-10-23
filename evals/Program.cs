@@ -10,6 +10,7 @@ using TerrarAI.Evals;
 //
 //   dotnet run --project evals/AgentEval.csproj -- [--runs 3] [--only 关键词] [--endpoint URL] [--no-kb]
 if(args.Contains("--recovery-bench"))return await RecoveryBenchmark.Run(args);
+if(args.Contains("--paired-recovery-bench"))return await PairedRecoveryBenchmark.Run(args);
 var opts = Options.Parse(args);
 Console.OutputEncoding = Encoding.UTF8;
 string root = AppContext.BaseDirectory;

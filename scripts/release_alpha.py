@@ -14,12 +14,13 @@ import zipfile
 ROOT = Path(__file__).resolve().parents[1]
 DOCS = ("README.md", "LICENSE", "LICENSE_STATUS.md", "THIRD_PARTY_NOTICES.md", "CHANGELOG.md", "build.txt",
         "release/dependencies.lock.json", "release/license-audit.json", "release/acceptance.json",
-        "docs/windows-alpha.md", "docs/release-readiness.md", "docs/authorization-request-draft.md",
-        "docs/collaboration.md", "docs/recovery-eval.md", "docs/source-replacement.md",
+        "docs/windows-alpha.md", "docs/internal/release-readiness.md", "docs/internal/README.md", "docs/README.md", "docs/demo.md",
+        "assets/demo-preview.gif",
+        "docs/collaboration.md", "docs/recovery-eval.md", "docs/paired-recovery-eval.md", "docs/source-replacement.md",
         "release/source-provenance.json", "release/config-compatibility.json",
-        "docs/playtest.md", "docs/playtest-0.10.30.md", "docs/playtest-0.10.32.md",
-        "docs/ore-tunnel.md", "docs/demo-fixes-0.10.34.md", "docs/model-memory.md",
-        "docs/learning-loop.md", "docs/architecture.md", "docs/github-preparation.md",
+        "docs/playtest.md", "docs/internal/playtest-0.10.30.md", "docs/internal/playtest-0.10.32.md",
+        "docs/ore-tunnel.md", "docs/internal/demo-fixes-0.10.34.md", "docs/model-memory.md",
+        "docs/learning-loop.md", "docs/architecture.md", "docs/internal/github-preparation.md",
         "docs/wiki-v010-provenance.json", "docs/offline-wiki-sources.json")
 RUN_SCRIPTS = ("winpaths.py", "release_support.py", "get_model.py", "setup_windows.py", "start_qwen.py", "play_local.py",
                "verify_alpha.py", "wiki_html.py", "import_wiki.py", "import_calamity_wiki.py")
@@ -102,7 +103,7 @@ def inputs(root, kind):
         names.update(("TerrarAI.cs", "TerrarAI_Config.cs", "TerrarAI.csproj", "description.txt", "description_workshop.txt", "icon.png", "icon_small.png", ".gitignore"))
         names.add("assets/companion-icon.svg")
         names.update(("DESIGN.md", "CONTRIBUTING.md", "SECURITY.md", ".editorconfig", ".gitattributes",
-                      "docs/reference-code-audit.json"))
+                      "docs/internal/reference-code-audit.json"))
         for folder in ("Common", "Content", "Localization", "tests", "evals", ".github"):
             for p in (root / folder).rglob("*"):
                 if folder == "evals" and p.name == "report.md":

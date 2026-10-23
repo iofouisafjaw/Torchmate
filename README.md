@@ -2,7 +2,18 @@
 
 **An on-device LLM companion for Terraria · 一个在本机运行的 Terraria 智能同伴**
 
-[English](#english) · [简体中文](#简体中文) · [CI](https://github.com/iofouisafjaw/Torchmate/actions/workflows/ci.yml) · [MIT](LICENSE)
+[![Source checks](https://github.com/iofouisafjaw/Torchmate/actions/workflows/ci.yml/badge.svg)](https://github.com/iofouisafjaw/Torchmate/actions/workflows/ci.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](LICENSE)
+
+[English](#english) · [简体中文](#简体中文) · [Install / 安装](docs/windows-alpha.md) · [Architecture / 架构](docs/architecture.md) · [Evaluation / 评测](docs/paired-recovery-eval.md)
+
+![Iron-armor planning and platform construction](assets/demo-preview.gif)
+
+**“做一套铁盔甲” → material/station preview → confirmation → crafting → verified delivery.**
+
+*29 s of recorded v0.10.33 gameplay, plus platform construction. Scripted world, prepared materials, local 14B model; normal-speed excerpts. [Recording scope / 演示范围](docs/demo.md).*
+
+*0.10.33 真实录屏剪辑：预置材料、真实模型与执行模块；不是当前版实机验收。*
 
 **0.10.34 · Source Alpha · Windows x64 · Single-player**
 
@@ -14,7 +25,7 @@ C# / .NET 8 · Python · llama.cpp · Qwen3-14B · JSON Schema · SQLite FTS5
 
 Give your companion a goal, such as gathering wood, crafting iron armor, or building a three-level platform arena. A local LLM selects tools; deterministic planners budget materials and stations, execute approved work, and verify results against the game. Inference runs locally without a cloud API or automatic cloud fallback.
 
-> **Source Alpha, not a ready-to-install binary release.** Build the mod before running setup. The repository includes no game assemblies, model weights, inference runtime, Wiki database, or saves. Automated checks pass; 0.10.34 gameplay retesting and clean-Windows installation acceptance remain incomplete. No Workshop release is available.
+**Source Alpha:** build instructions are below. Current gameplay and clean-Windows acceptance remain pending; see [known limits](#known-limits-and-licensing).
 
 **Compatibility:** Torchmate is the new project and mod display name. The internal mod ID remains `TerrarAI`; `.tmod` filenames, configuration types, and save/data paths keep that identifier so existing installations remain compatible.
 
@@ -98,7 +109,7 @@ python scripts/play_local.py --cpu
 
 ### Evaluation and verification
 
-**Current automated scope:** 3,024 C# checks and 86 Python tests in source CI, plus validation of 84 evaluation fixtures **without running a model**. A local mod build additionally passed 66 compiled-wiring checks, for 3,090 C# checks in that local validation. These counts describe checks, not game tasks or gameplay acceptance. See [workflow](.github/workflows/ci.yml) and [verification scope](docs/github-preparation.md).
+**Current automated scope:** 3,246 C# checks and 87 Python tests in source CI, plus validation of 84 evaluation fixtures **without running a model**. An earlier local mod build passed 66 additional compiled-wiring checks (3,090 C# checks in that earlier validation). These counts describe checks, not game tasks or gameplay acceptance. See [workflow](.github/workflows/ci.yml) and [verification scope](docs/internal/github-preparation.md).
 
 **Historical local-model results, not a new 0.10.34 model run:**
 
@@ -128,14 +139,15 @@ dotnet run --project tests/CompanionTests.csproj
 python scripts/run_evals.py --validate
 ```
 
-The [CI workflow](.github/workflows/ci.yml) lists all adapter test commands. This README update does not rerun real-model benchmarks or graphical gameplay.
+The [CI workflow](.github/workflows/ci.yml) lists all adapter test commands. A separate paired-state diagnostic ran 32 states × 3 seeds per strategy with rules, the original unadapted 4B, and the existing 14B: recoverable tasks completed **48/48, 24/48, and 48/48**, respectively, with zero forbidden dispatches. It used 223 real model requests; the existing 4B is **not** Instruct-2507. Program-provided material bills make the rule strong; these are exploratory diagnostics, not held-out transfer or gameplay results. [Protocol and limitations](docs/paired-recovery-eval.md).
 
 ### Known limits and licensing
 
 - Single-player Windows Alpha. Multiplayer, other platforms, arbitrary buildings, and full Boss combat are not validated features.
-- Navigation, swimming, digging, drop collection, mod hooks, GPU/game contention, FPS, and mouse/IME behavior still need player testing. 0.10.34 fixes have automated coverage; gameplay retesting and clean-Windows acceptance remain incomplete. Use the [playtest checklist](docs/playtest.md) and [0.10.34 regression steps](docs/demo-fixes-0.10.34.md).
+- Navigation, swimming, digging, drop collection, mod hooks, GPU/game contention, FPS, and mouse/IME behavior still need player testing. 0.10.34 fixes have automated coverage; gameplay retesting and clean-Windows acceptance remain incomplete. Use the [playtest checklist](docs/playtest.md) and [0.10.34 regression steps](docs/internal/demo-fixes-0.10.34.md).
 - Path/tunnel/gathering searches have explicit range and safety budgets; no safe route or insufficient tools can stop a task. Replanning does not broaden scope or inherit old permission. Active cooperation and approvals do not resume across world exits.
 - Optional integrations are not guarantees for every mod combination. Missing Wiki evidence limits advice; version checks and numeric filtering cannot eliminate all hallucinations. 8B and reduced-memory settings do not inherit historical 14B scores.
+- The project began from the publicly available [terrar.ai prototype](https://github.com/SlothfulDreams/terrar.ai). Active inherited implementations and icons were removed or replaced in 0.10.30; historical permission remains unresolved, and no clean-room claim is made.
 - Project-owned code, documentation, tests, and original icons use [MIT](LICENSE). Third parties retain [their licenses](THIRD_PARTY_NOTICES.md). This grant does not cover game assets, Wiki content, model weights, or unauthorized historical upstream material. The public repository starts with fresh source history; see [license scope](LICENSE_STATUS.md) and [replacement record](docs/source-replacement.md).
 
 For feedback, include the version, actual model, reproduction steps, and short redacted logs. Keep saves, full chats, `.env`, keys, and model/Wiki files out of issues. See [contributing](CONTRIBUTING.md), [security](SECURITY.md), and [changelog](CHANGELOG.md).
@@ -230,7 +242,7 @@ python scripts/play_local.py --cpu
 
 ### 评测数据与验证边界
 
-**当前自动化范围：** 源码 CI 运行 3,024 项 C# 检查、86 项 Python 测试，另校验 84 个评测夹具，**不调用模型**。本地模组构建另通过 66 项编译后接线检查，该轮本地 C# 合计 3,090 项。检查数量不是游戏任务数量，也不代表实机通过。见 [CI 工作流](.github/workflows/ci.yml) 和 [验证范围](docs/github-preparation.md)。
+**当前自动化范围：** 源码 CI 运行 3,246 项 C# 检查、87 项 Python 测试，另校验 84 个评测夹具，**不调用模型**。此前本地模组构建另通过 66 项编译后接线检查（早前该轮 C# 合计 3,090 项）。检查数量不是游戏任务数量，也不代表实机通过。见 [CI 工作流](.github/workflows/ci.yml) 和 [验证范围](docs/internal/github-preparation.md)。
 
 **以下是历史本地模型成绩，不是 0.10.34 的新模型评测：**
 
@@ -260,14 +272,17 @@ dotnet run --project tests/CompanionTests.csproj
 python scripts/run_evals.py --validate
 ```
 
-完整适配器测试命令见 [CI 工作流](.github/workflows/ci.yml)。本次 README 修改不重跑真实模型基准或图形游戏。
+完整适配器测试命令见 [CI 工作流](.github/workflows/ci.yml)。另一次成对状态诊断对 32 个状态各跑 3 个种子／策略：规则、原版未微调 4B、现有 14B 的可恢复任务完成数分别为 **48/48、24/48、48/48**，违规调度均为零，共 223 次真实模型请求。这里的 4B **不是** Instruct-2507；程序已提供材料账单，规则基线因此很强。这是探索性诊断，不是留出集泛化或实机成绩。见 [协议与局限](docs/paired-recovery-eval.md)。
 
 ### 已知限制与许可
 
 - 当前为 Windows 单人 Alpha；多人、其他平台、任意复杂建筑和完整 Boss 战斗不属于已验证能力。
-- 实际寻路、游泳、挖掘、掉落、模组钩子、模型与游戏争用显存、FPS、鼠标和中文输入仍需玩家验收。0.10.34 修复有自动化覆盖，但实机复测与全新 Windows 验收未完成；见 [实机清单](docs/playtest.md) 和 [本版复测步骤](docs/demo-fixes-0.10.34.md)。
+- 实际寻路、游泳、挖掘、掉落、模组钩子、模型与游戏争用显存、FPS、鼠标和中文输入仍需玩家验收。0.10.34 修复有自动化覆盖，但实机复测与全新 Windows 验收未完成；见 [实机清单](docs/playtest.md) 和 [本版复测步骤](docs/internal/demo-fixes-0.10.34.md)。
 - 寻路／通道／采集有范围与安全预算；无安全路线或工具不足时会停止。重规划不扩大范围、不继承旧许可。退出世界后不恢复执行中的协作任务或确认。
 - 可选集成不保证兼容所有模组组合。缺少 Wiki 会限制攻略能力；版本检查和数值过滤不能消除全部幻觉。8B 或降低显存配置不自动继承历史 14B 成绩。
+- 项目最初基于公开可见的 [terrar.ai 原型](https://github.com/SlothfulDreams/terrar.ai)，0.10.30 移除或替换了继承实现与图标。历史授权仍未解决，不作净室重写声明。
 - 当前自有代码、文档、测试和原创图标采用 [MIT](LICENSE)；[第三方许可](THIRD_PARTY_NOTICES.md) 保持独立。授权不覆盖游戏素材、Wiki 内容、模型权重或未获授权的历史上游材料。公开仓库采用新历史；详见 [许可范围](LICENSE_STATUS.md) 和 [替换记录](docs/source-replacement.md)。
 
 反馈请附版本、实际模型、复现步骤和简短脱敏日志，不要上传存档、完整聊天、`.env`、密钥、模型或 Wiki 文件。另见 [贡献说明](CONTRIBUTING.md)、[安全说明](SECURITY.md) 与 [更新记录](CHANGELOG.md)。
+
+Documentation index / 文档索引：[docs/](docs/README.md)。
