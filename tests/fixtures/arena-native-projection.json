@@ -1,0 +1,1278 @@
+{
+  "source": "Projection of 0.10.33 demo game-data export, Terraria 1.4.4.9. Test-local IDs; dry daytime ordinary scene (conditional recipes excluded). Station and recipe group memberships modeled explicitly, not a full engine export.",
+  "recipes": [
+    {
+      "id": 161,
+      "item": "弱效治疗药水",
+      "output": 2,
+      "ingredients": [
+        [
+          "蘑菇",
+          1
+        ],
+        [
+          "凝胶",
+          2
+        ],
+        [
+          "玻璃瓶",
+          2
+        ]
+      ],
+      "stations": [
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": 993,
+      "item": "暗影木工作台",
+      "output": 1,
+      "ingredients": [
+        [
+          "暗影木",
+          10
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 299,
+      "item": "暗影木",
+      "output": 1,
+      "ingredients": [
+        [
+          "暗影木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 869,
+      "item": "暗影木",
+      "output": 1,
+      "ingredients": [
+        [
+          "暗影木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1417,
+      "item": "暗影木",
+      "output": 1,
+      "ingredients": [
+        [
+          "暗影木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 955,
+      "item": "红木工作台",
+      "output": 1,
+      "ingredients": [
+        [
+          "红木",
+          10
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 295,
+      "item": "红木",
+      "output": 1,
+      "ingredients": [
+        [
+          "红木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 865,
+      "item": "红木",
+      "output": 1,
+      "ingredients": [
+        [
+          "红木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1413,
+      "item": "红木",
+      "output": 1,
+      "ingredients": [
+        [
+          "红木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 974,
+      "item": "乌木工作台",
+      "output": 1,
+      "ingredients": [
+        [
+          "乌木",
+          10
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 297,
+      "item": "乌木",
+      "output": 1,
+      "ingredients": [
+        [
+          "乌木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 867,
+      "item": "乌木",
+      "output": 1,
+      "ingredients": [
+        [
+          "乌木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1411,
+      "item": "乌木",
+      "output": 1,
+      "ingredients": [
+        [
+          "乌木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 903,
+      "item": "工作台",
+      "output": 1,
+      "ingredients": [
+        [
+          "木材",
+          10
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 1410,
+      "item": "乌木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "乌木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 866,
+      "item": "乌木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "乌木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 296,
+      "item": "乌木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "乌木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 1412,
+      "item": "红木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "红木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 864,
+      "item": "红木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "红木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 294,
+      "item": "红木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "红木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 1416,
+      "item": "暗影木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "暗影木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 868,
+      "item": "暗影木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "暗影木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 298,
+      "item": "暗影木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "暗影木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 500,
+      "item": "粉花瓶",
+      "output": 1,
+      "ingredients": [
+        [
+          "粘土块",
+          4
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 2373,
+      "item": "钛金熔炉",
+      "output": 1,
+      "ingredients": [
+        [
+          "钛金矿",
+          30
+        ],
+        [
+          "地狱熔炉",
+          1
+        ]
+      ],
+      "stations": [
+        "秘银砧"
+      ]
+    },
+    {
+      "id": 2359,
+      "item": "精金熔炉",
+      "output": 1,
+      "ingredients": [
+        [
+          "精金矿",
+          30
+        ],
+        [
+          "地狱熔炉",
+          1
+        ]
+      ],
+      "stations": [
+        "秘银砧"
+      ]
+    },
+    {
+      "id": 1990,
+      "item": "熔炉",
+      "output": 1,
+      "ingredients": [
+        [
+          "石块",
+          20
+        ],
+        [
+          "任何 木材",
+          4
+        ],
+        [
+          "火把",
+          3
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 0,
+      "item": "火把",
+      "output": 3,
+      "ingredients": [
+        [
+          "凝胶",
+          1
+        ],
+        [
+          "任何 木材",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 291,
+      "item": "棕榈木",
+      "output": 1,
+      "ingredients": [
+        [
+          "棕榈木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 875,
+      "item": "棕榈木",
+      "output": 1,
+      "ingredients": [
+        [
+          "棕榈木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1421,
+      "item": "棕榈木",
+      "output": 1,
+      "ingredients": [
+        [
+          "棕榈木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1420,
+      "item": "棕榈木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "棕榈木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 874,
+      "item": "棕榈木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "棕榈木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 290,
+      "item": "棕榈木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "棕榈木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 339,
+      "item": "王朝木",
+      "output": 1,
+      "ingredients": [
+        [
+          "王朝木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 1568,
+      "item": "王朝木",
+      "output": 1,
+      "ingredients": [
+        [
+          "白王朝墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1570,
+      "item": "王朝木",
+      "output": 1,
+      "ingredients": [
+        [
+          "蓝王朝墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1569,
+      "item": "蓝王朝墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "王朝木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1567,
+      "item": "白王朝墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "王朝木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 338,
+      "item": "王朝木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "王朝木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 293,
+      "item": "针叶木",
+      "output": 1,
+      "ingredients": [
+        [
+          "针叶木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 873,
+      "item": "针叶木",
+      "output": 1,
+      "ingredients": [
+        [
+          "针叶木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1419,
+      "item": "针叶木",
+      "output": 1,
+      "ingredients": [
+        [
+          "针叶木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1418,
+      "item": "针叶木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "针叶木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 872,
+      "item": "针叶木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "针叶木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 292,
+      "item": "针叶木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "针叶木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 301,
+      "item": "珍珠木",
+      "output": 1,
+      "ingredients": [
+        [
+          "珍珠木平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 871,
+      "item": "珍珠木",
+      "output": 1,
+      "ingredients": [
+        [
+          "珍珠木墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1415,
+      "item": "珍珠木",
+      "output": 1,
+      "ingredients": [
+        [
+          "珍珠木栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1414,
+      "item": "珍珠木栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "珍珠木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 870,
+      "item": "珍珠木墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "珍珠木",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 300,
+      "item": "珍珠木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "珍珠木",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 81,
+      "item": "玻璃杯",
+      "output": 1,
+      "ingredients": [
+        [
+          "玻璃",
+          1
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 305,
+      "item": "玻璃",
+      "output": 1,
+      "ingredients": [
+        [
+          "玻璃平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 503,
+      "item": "玻璃",
+      "output": 1,
+      "ingredients": [
+        [
+          "任何 沙块",
+          2
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 505,
+      "item": "玻璃",
+      "output": 1,
+      "ingredients": [
+        [
+          "玻璃墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 504,
+      "item": "玻璃墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "玻璃",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 304,
+      "item": "玻璃平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "玻璃",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 155,
+      "item": "玻璃瓶",
+      "output": 2,
+      "ingredients": [
+        [
+          "玻璃",
+          1
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 172,
+      "item": "敏捷药水",
+      "output": 1,
+      "ingredients": [
+        [
+          "水瓶",
+          1
+        ],
+        [
+          "闪耀根",
+          1
+        ],
+        [
+          "仙人掌",
+          1
+        ]
+      ],
+      "stations": [
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": 303,
+      "item": "仙人掌",
+      "output": 1,
+      "ingredients": [
+        [
+          "仙人掌平台",
+          2
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 1741,
+      "item": "仙人掌",
+      "output": 1,
+      "ingredients": [
+        [
+          "仙人掌墙",
+          4
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 1740,
+      "item": "仙人掌墙",
+      "output": 4,
+      "ingredients": [
+        [
+          "仙人掌",
+          1
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 302,
+      "item": "仙人掌平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "仙人掌",
+          1
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 171,
+      "item": "再生药水",
+      "output": 1,
+      "ingredients": [
+        [
+          "水瓶",
+          1
+        ],
+        [
+          "太阳花",
+          1
+        ],
+        [
+          "蘑菇",
+          1
+        ]
+      ],
+      "stations": [
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": 174,
+      "item": "铁皮药水",
+      "output": 1,
+      "ingredients": [
+        [
+          "水瓶",
+          1
+        ],
+        [
+          "太阳花",
+          1
+        ],
+        [
+          "铁矿",
+          1
+        ]
+      ],
+      "stations": [
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": 175,
+      "item": "铁皮药水",
+      "output": 1,
+      "ingredients": [
+        [
+          "水瓶",
+          1
+        ],
+        [
+          "太阳花",
+          1
+        ],
+        [
+          "铅矿",
+          1
+        ]
+      ],
+      "stations": [
+        "玻璃瓶"
+      ]
+    },
+    {
+      "id": 393,
+      "item": "红心灯笼",
+      "output": 1,
+      "ingredients": [
+        [
+          "生命水晶",
+          1
+        ],
+        [
+          "链条",
+          4
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 2114,
+      "item": "链条",
+      "output": 15,
+      "ingredients": [
+        [
+          "任何 铁锭",
+          1
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 2345,
+      "item": "山铜砧",
+      "output": 1,
+      "ingredients": [
+        [
+          "山铜锭",
+          12
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 2331,
+      "item": "秘银砧",
+      "output": 1,
+      "ingredients": [
+        [
+          "秘银锭",
+          10
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 2090,
+      "item": "铅砧",
+      "output": 1,
+      "ingredients": [
+        [
+          "铅锭",
+          5
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 2089,
+      "item": "铅锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "铅矿",
+          3
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 1425,
+      "item": "铅锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "铅栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 2077,
+      "item": "铁砧",
+      "output": 1,
+      "ingredients": [
+        [
+          "铁锭",
+          5
+        ]
+      ],
+      "stations": [
+        "工作台"
+      ]
+    },
+    {
+      "id": 2076,
+      "item": "铁锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "铁矿",
+          3
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 1427,
+      "item": "铁锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "铁栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 1429,
+      "item": "铁锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "锻铁栅栏",
+          4
+        ]
+      ],
+      "stations": [
+        "重型工作台"
+      ]
+    },
+    {
+      "id": 1426,
+      "item": "铁栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "铁锭",
+          1
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 1424,
+      "item": "铅栅栏",
+      "output": 4,
+      "ingredients": [
+        [
+          "铅锭",
+          1
+        ]
+      ],
+      "stations": [
+        "铁砧"
+      ]
+    },
+    {
+      "id": 2318,
+      "item": "秘银锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "秘银矿",
+          4
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 2332,
+      "item": "山铜锭",
+      "output": 1,
+      "ingredients": [
+        [
+          "山铜矿",
+          4
+        ]
+      ],
+      "stations": [
+        "熔炉"
+      ]
+    },
+    {
+      "id": 36,
+      "item": "篝火",
+      "output": 1,
+      "ingredients": [
+        [
+          "任何 木材",
+          10
+        ],
+        [
+          "火把",
+          5
+        ]
+      ],
+      "stations": []
+    },
+    {
+      "id": 286,
+      "item": "木平台",
+      "output": 2,
+      "ingredients": [
+        [
+          "木材",
+          1
+        ]
+      ],
+      "stations": []
+    }
+  ],
+  "raw": [
+    "冰块",
+    "土块",
+    "太阳花",
+    "木材",
+    "泥块",
+    "石块",
+    "粘土块",
+    "金矿",
+    "钨矿",
+    "铁矿",
+    "铂金矿",
+    "铅矿",
+    "铜矿",
+    "银矿",
+    "锡矿",
+    "闪耀根",
+    "雪块"
+  ],
+  "groups": {
+    "任何 木材": [
+      "木材",
+      "乌木",
+      "红木",
+      "暗影木",
+      "珍珠木",
+      "针叶木",
+      "王朝木",
+      "棕榈木"
+    ],
+    "任何 铁锭": [
+      "铁锭",
+      "铅锭"
+    ],
+    "任何 沙块": [
+      "沙块",
+      "黑檀沙",
+      "猩红沙",
+      "珍珠沙"
+    ]
+  },
+  "stations": {
+    "工作台": [
+      "工作台",
+      "乌木工作台",
+      "红木工作台",
+      "暗影木工作台"
+    ],
+    "熔炉": [
+      "熔炉",
+      "地狱熔炉",
+      "精金熔炉",
+      "钛金熔炉"
+    ],
+    "铁砧": [
+      "铁砧",
+      "铅砧",
+      "秘银砧",
+      "山铜砧"
+    ],
+    "玻璃瓶": [
+      "玻璃瓶",
+      "玻璃杯",
+      "粉花瓶",
+      "酒杯"
+    ]
+  },
+  "goals": {
+    "木平台": 240,
+    "篝火": 2,
+    "红心灯笼": 2,
+    "铁皮药水": 2,
+    "再生药水": 2,
+    "敏捷药水": 2,
+    "弱效治疗药水": 10
+  },
+  "stock": {
+    "木材": 400,
+    "凝胶": 40,
+    "石块": 40
+  }
+}

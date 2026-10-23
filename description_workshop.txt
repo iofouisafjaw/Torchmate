@@ -1,0 +1,4 @@
+[h1]TerrarAI — local preparation build[/h1]
+This version is not cleared for Workshop distribution. Historical source/history, project licensing and the external local-model-service deployment rules require review before publication. No Workshop upload is requested or performed.
+
+The Windows GitHub Alpha preparation uses an external local Qwen3 / llama.cpp service, single-player permission-checked tools, deterministic crafting/building and cooperative tasks. See README.md, LICENSE_STATUS.md and THIRD_PARTY_NOTICES.md for current capabilities, installation prerequisites and release blockers. Models, runtimes and Wiki databases are not bundled.

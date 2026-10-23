@@ -1,0 +1,471 @@
+// 同伴测试题。每题：玩家说的话（say）、一个简化的世界（world）、期望（expect）。
+// expect 里每一项都是可选的：
+//   end        结束方式：reply 回复 / forward 交给资料库 / ask 反问 / build 盖房 / platform 搭平台 / stop 被程序停下
+//   calls      必须调用的工具，"craft:工作台" 表示参数里含"工作台"；no_calls 不许调用的
+//   first      第一步必须是哪个工具
+//   text_has   最后一句话至少提到其中一个词；text_lacks 一个都不能有
+//   max_model_calls  最多调用模型几次
+//   bag_has    结束时背包（或已放下）至少有；near 身边必须放着的制作站
+//   spawns_real  作弊生成出了真实存在的物品
+//   kb_has     交给资料库后，资料库的回答要提到其中一个词
+// 世界默认：森林白天、5 棵树、背包空、只有向导、作弊关。
+[
+  // 0.10.25: terminal world-cheat handoffs; offline adapter does not simulate native effects.
+  { "id": "cheat-world-time", "say": "时间改成21:00", "world": { "cheat": true },
+    "expect": { "end": ["cheat_world"], "calls": ["cheat_world:21:00"], "max_model_calls": 2 } },
+  { "id": "cheat-world-rain", "say": "天气改成下雨", "world": { "cheat": true },
+    "expect": { "end": ["cheat_world"], "calls": ["cheat_world:rain"], "max_model_calls": 2 } },
+  { "id": "cheat-world-boss", "say": "召唤克眼", "world": { "cheat": true },
+    "expect": { "end": ["cheat_world"], "calls": ["cheat_world:eye"], "max_model_calls": 2 } },
+  { "id": "cheat-world-spawn", "say": "把世界出生点设在这里", "world": { "cheat": true },
+    "expect": { "end": ["cheat_world"], "calls": ["cheat_world:here"], "max_model_calls": 2 } },
+  { "id": "cheat-world-off", "say": "天气改成晴天", "world": { "cheat": false },
+    "expect": { "end": ["reply", "ask"], "no_calls": ["cheat_world", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "cheat-world-question", "say": "怎么召唤克眼", "world": { "cheat": true },
+    "expect": { "end": ["forward"], "no_calls": ["cheat_world"], "max_model_calls": 2 } },
+  { "id": "cheat-world-negated", "say": "不要召唤克眼", "world": { "cheat": true },
+    "expect": { "end": ["reply"], "no_calls": ["cheat_world", "spawn_item"], "max_model_calls": 2 } },
+
+  // gardening只测程序交接，不模拟生长、采收或物品生成。
+  { "id": "garden-acorns", "say": "帮我种3颗橡实，先给我看计划",
+    "expect": { "end": ["garden"], "no_calls": ["chop", "mine", "place", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "garden-herbs", "say": "帮我在附近花盆种5株太阳花，先确认再种",
+    "expect": { "end": ["garden"], "no_calls": ["craft", "place", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "garden-harvest", "say": "采收附近已开花的草药，幼苗别动，先列计划",
+    "expect": { "end": ["garden"], "no_calls": ["mine", "chop", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "garden-potion-chain", "say": "规划合成3瓶再生药水，优先背包和箱子，缺草药再采开花的",
+    "expect": { "end": ["craft_chain"], "no_calls": ["garden", "mine", "spawn_item", "craft", "chest_take"], "max_model_calls": 2 } },
+  // 克眼准备只测模型交接；程序场景见 ArenaTests，不冒充地形或Buff验收。
+  { "id": "arena-eye-prep", "say": "帮我准备打克眼，先列出竞技场和药水缺什么，确认后再动手",
+    "expect": { "end": ["prepare_eye"], "no_calls": ["craft", "place", "spawn_item", "chop", "mine", "buy"], "max_model_calls": 2 } },
+  { "id": "arena-eye-formal-name", "say": "准备打克苏鲁之眼，需要平台、篝火、心灯和药水，先给我看计划",
+    "expect": { "end": ["prepare_eye"], "no_calls": ["craft", "place", "structure", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "arena-eye-boxes", "say": "用背包和旁边箱子的材料帮我准备打克眼，不够先告诉我",
+    "world": { "bag": { "木材": 80 }, "chests": { "木材": 150 } },
+    "expect": { "end": ["prepare_eye"], "no_calls": ["chest_take", "craft", "place", "spawn_item"], "max_model_calls": 2 } },
+  // 挖掘／探路只测工具交接；地形行为由共享控制器测试，实机由玩家验收。
+  { "id": "expedition-underground", "say": "帮我从这里挖到地下层，发现矿和危险就告诉我",
+    "expect": { "end": ["expedition"], "calls": ["expedition:underground"], "no_calls": ["mine", "spawn_item", "control"], "max_model_calls": 2 } },
+  { "id": "expedition-tunnel", "say": "往下挖一条32格深的通道，用背包的镐就行",
+    "expect": { "end": ["expedition"], "calls": ["expedition:tunnel"], "no_calls": ["mine", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "expedition-scout", "say": "去我面前探探，报告沿路矿、箱子和危险，然后回来",
+    "expect": { "end": ["expedition"], "calls": ["expedition:scout"], "no_calls": ["mine", "chest_take", "spawn_item"], "max_model_calls": 2 } },
+  // 只核对定位工具交接；离线环境没有真实地图，不伪造坐标或标记。
+  { "id": "locate-ore", "say": "帮我看看最近的铁矿在什么方向，标到地图上，我暂时不挖",
+    "expect": { "end": ["locate"], "calls": ["locate:铁矿"], "no_calls": ["mine", "craft", "chest_take", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "locate-chest", "say": "附近哪里有箱子，给我标个位置，不要拿东西",
+    "expect": { "end": ["locate"], "calls": ["locate:箱子"], "no_calls": ["chest_take", "chest_put", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "locate-bed", "say": "我之前设置出生点的床在什么方向，标在地图上给我看看",
+    "expect": { "end": ["locate"], "calls": ["locate:我的床"], "no_calls": ["place", "craft", "spawn_item"], "max_model_calls": 2 } },
+  // 只测模型交接；不在离线工具世界伪造战斗伤害。
+  { "id": "combat-protect", "say": "跟着我，帮我挡一挡身边的小怪，保护我",
+    "expect": { "end": ["combat"], "calls": ["combat:protect"], "no_calls": ["mine", "chop", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "combat-clear", "say": "把周围的小怪清了，别碰城镇NPC",
+    "expect": { "end": ["combat"], "calls": ["combat:clear"], "no_calls": ["mine", "chop", "spawn_item"], "max_model_calls": 2 } },
+  { "id": "combat-stop", "say": "先别打了，停止攻击附近怪物",
+    "expect": { "end": ["combat"], "calls": ["combat:off"], "no_calls": ["mine", "chop", "spawn_item"], "max_model_calls": 2 } },
+  // 完整链只测模型交接；成品和采集执行由共享程序核心测试核验。
+  { "id": "chain-iron-suit", "say": "帮我准备一套铁盔甲，先算材料，确认后再执行",
+    "expect": { "end": ["craft_chain"], "calls": ["craft_chain:铁"], "no_calls": ["craft", "mine", "chop", "place"], "max_model_calls": 2 } },
+  { "id": "chain-furnace", "say": "规划完整合成链，制作两个熔炉，缺材料再采集",
+    "expect": { "end": ["craft_chain"], "calls": ["craft_chain:熔炉"], "no_calls": ["craft", "mine", "chop", "place"], "max_model_calls": 2 } },
+  { "id": "chain-anvil-boxes", "say": "做一个铁砧，先看背包和附近箱子，不够再采集，确认后做",
+    "world": { "bag": { "铁锭": 2 }, "chests": { "铁锭": 3 }, "near": ["工作台"] },
+    "expect": { "end": ["craft_chain"], "calls": ["craft_chain:铁砧"], "no_calls": ["craft", "chest_take", "mine", "chop", "place"], "max_model_calls": 3 } },
+  // ---------------- 知识问题：应该交给资料库，而且资料库要答到点上 ----------------
+  { "id": "kb-soul-of-light", "say": "光明之魂是啥",
+    "expect": { "end": ["forward"], "max_model_calls": 3, "kb_has": ["光明之魂"] } },
+  { "id": "kb-boss-drops", "say": "克苏鲁之眼掉落什么",
+    "expect": { "end": ["forward"], "max_model_calls": 3, "kb_has": ["掉落", "掉"] } },
+  { "id": "kb-calamity-drops", "say": "荒漠灾虫掉落什么装备",
+    "expect": { "end": ["forward"], "max_model_calls": 3 } },
+  { "id": "kb-how-to-use", "say": "史莱姆钩如何使用",
+    "expect": { "end": ["forward"], "max_model_calls": 3, "kb_has": ["钩"] } },
+  { "id": "kb-final-boss", "say": "最终boss是哪个",
+    "checklist": [ { "name": "史莱姆王", "mod": "Terraria", "type": "boss", "progression": 1 },
+                   { "name": "月亮领主", "mod": "Terraria", "type": "boss", "progression": 18 },
+                   { "name": "至尊灾厄", "mod": "CalamityMod", "type": "boss", "progression": 23 } ],
+    "expect": { "end": ["forward"], "max_model_calls": 3, "kb_has": ["至尊灾厄", "月亮领主"] } },
+  { "id": "kb-first-boss", "say": "我们这个世界该去打的第一个boss是哪个",
+    "expect": { "end": ["forward"], "max_model_calls": 3 } },
+  { "id": "kb-next-step", "say": "下一步该干啥",
+    "expect": { "end": ["forward", "reply"], "max_model_calls": 4 } },
+  { "id": "kb-how-to-fight", "say": "克苏鲁之眼怎么打",
+    "expect": { "end": ["forward"], "max_model_calls": 3 } },
+
+  // ---------------- 查询：查一次就回答，不要重复查 ----------------
+  { "id": "look-bag", "say": "背包里有啥",
+    "world": { "bag": { "木材": 40, "铜币": 71, "凝胶": 3, "铜短剑": 1 } },
+    "expect": { "end": ["reply"], "calls": ["inventory"], "text_has": ["木材"], "max_model_calls": 3 } },
+  { "id": "look-trees", "say": "附近有几棵树",
+    "world": { "trees": 7 },
+    "expect": { "end": ["reply"], "text_has": ["7"], "max_model_calls": 3 } },
+  { "id": "look-shop", "say": "你知道商店在哪吗",
+    "note": "泰拉瑞亚没有商店建筑，该说找城镇 NPC / 商人",
+    "expect": { "end": ["reply", "forward"], "text_has": ["NPC", "商人"], "text_lacks": ["白天 10"], "max_model_calls": 4 } },
+  { "id": "look-npcs", "say": "还有哪些NPC没来，要怎么让他们来",
+    "expect": { "end": ["reply"], "calls": ["npcs"], "text_has": ["商人"], "max_model_calls": 3 } },
+  { "id": "look-shop-item", "say": "哪个NPC卖铁砧",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"] },
+    "expect": { "end": ["reply"], "calls": ["shop:铁砧"], "text_has": ["商人"], "max_model_calls": 3 } },
+  { "id": "look-house", "say": "盖一个NPC小屋需要什么材料",
+    "world": { "bag": { "木材": 10 } },
+    "expect": { "end": ["reply"], "calls": ["house_materials"], "text_has": ["木"], "max_model_calls": 3 } },
+
+  // ---------------- 合成：要能自己补齐中间步骤 ----------------
+  { "id": "craft-bench", "say": "帮我做个工作台放旁边",
+    "world": { "bag": { "木材": 40 } },
+    "expect": { "end": ["reply"], "calls": ["craft:工作台", "place:工作台"], "near": ["工作台"], "max_model_calls": 5 } },
+  { "id": "craft-bench-chop", "say": "帮我做个工作台",
+    "world": { "bag": { "木材": 3 }, "trees": 5 },
+    "note": "木材不够，要先砍树再做",
+    "expect": { "end": ["reply"], "calls": ["chop", "craft:工作台"], "bag_has": { "工作台": 1 }, "max_model_calls": 6 } },
+  { "id": "craft-table-needs-bench", "say": "帮我做张木桌放旁边",
+    "world": { "bag": { "木材": 40 } },
+    "note": "没有工作台：craft 会自己先做一个放下",
+    "expect": { "end": ["reply"], "bag_has": { "木桌": 1 }, "max_model_calls": 6 } },
+  { "id": "craft-chair", "say": "帮我做把木椅",
+    "world": { "bag": { "木材": 20 }, "near": ["工作台"] },
+    "expect": { "end": ["reply"], "calls": ["craft:木椅"], "bag_has": { "木椅": 1 }, "max_model_calls": 3 } },
+  { "id": "craft-torches", "say": "帮我做10个火把",
+    "world": { "bag": { "木材": 5, "凝胶": 5 } },
+    "expect": { "end": ["reply"], "bag_has": { "火把": 10 }, "max_model_calls": 4 } },
+  { "id": "craft-furnace-mine", "say": "帮我做个熔炉",
+    "world": { "bag": { "木材": 30, "火把": 5 }, "near": ["工作台"], "ores": { "石块": 40 } },
+    "note": "缺石块，附近能挖",
+    "expect": { "end": ["reply"], "calls": ["mine"], "bag_has": { "熔炉": 1 }, "max_model_calls": 7 } },
+  { "id": "craft-furnace-no-stone", "say": "帮我做个熔炉",
+    "world": { "bag": { "木材": 30, "火把": 5 }, "near": ["工作台"] },
+    "note": "附近没石头：应该如实说明并给建议，不要来回乱试",
+    "expect": { "end": ["reply", "stop"], "text_has": ["石"], "max_model_calls": 8 } },
+  { "id": "craft-impossible", "say": "帮我做把泰拉刃",
+    "world": { "bag": { "木材": 30 } },
+    "expect": { "end": ["reply", "ask"], "no_calls": ["chop", "mine", "spawn_item"], "max_model_calls": 5 } },
+  { "id": "context-bleed", "say": "帮我做个工作台放旁边",
+    "dialogue": [ "玩家：帮我做个熔炉", "你：熔炉还差 石块 ×20" ],
+    "world": { "bag": { "木材": 40 } },
+    "note": "上一句在说熔炉，这一句只要工作台",
+    "expect": { "end": ["reply"], "calls": ["craft:工作台"], "no_calls": ["craft:熔炉", "mine"], "near": ["工作台"], "max_model_calls": 5 } },
+
+  // ---------------- 作弊 ----------------
+  { "id": "cheat-torches", "say": "给我十个火把",
+    "world": { "cheat": true },
+    "expect": { "end": ["reply"], "calls": ["spawn_item:火把"], "bag_has": { "火把": 10 }, "max_model_calls": 3 } },
+  { "id": "cheat-off", "say": "直接生成十个火把给我",
+    "world": { "cheat": false, "bag": { "木材": 2 } },
+    "note": "作弊没开：要告诉玩家开关在哪",
+    "expect": { "end": ["reply", "ask"], "text_has": ["作弊", "开关"], "max_model_calls": 4 } },
+  { "id": "cheat-random-gear", "say": "随便生成一个游戏里有的装备",
+    "world": { "cheat": true },
+    "expect": { "end": ["reply"], "spawns_real": true, "max_model_calls": 5 } },
+  { "id": "cheat-endgame-gear", "say": "生成一件毕业装备",
+    "world": { "cheat": true },
+    "expect": { "end": ["reply", "ask"], "max_model_calls": 5 } },
+  { "id": "cheat-structure", "say": "生成个存好的建筑",
+    "world": { "cheat": true },
+    "expect": { "end": ["reply"], "calls": ["structure"], "text_has": ["StructureHelper", "魔杖", "还没有"], "max_model_calls": 3 } },
+  { "id": "cheat-not-mentioned", "say": "帮我把周围的小怪打了",
+    "world": { "cheat": true, "enemies": 3 },
+    "note": "同伴不会打怪：说明做不了，别扯作弊",
+    "expect": { "end": ["reply"], "text_lacks": ["作弊"], "no_calls": ["spawn_item"], "max_model_calls": 3 } },
+
+  // ---------------- 采集和指挥 ----------------
+  { "id": "chop-5", "say": "帮我砍5棵树",
+    "world": { "trees": 6 },
+    "expect": { "end": ["reply"], "calls": ["chop"], "bag_has": { "木材": 50 }, "max_model_calls": 3 } },
+  { "id": "follow", "say": "跟着我",
+    "expect": { "end": ["reply"], "calls": ["control:follow"], "max_model_calls": 3 } },
+  { "id": "wait", "say": "你在这等我一下",
+    "expect": { "end": ["reply"], "calls": ["control:wait"], "max_model_calls": 3 } },
+  { "id": "build-house", "say": "帮我盖一间NPC小屋",
+    "world": { "bag": { "木材": 200 } },
+    "expect": { "end": ["build"], "max_model_calls": 4 } },
+  { "id": "platform", "say": "帮我搭个平台",
+    "expect": { "end": ["platform"], "max_model_calls": 3 } },
+  { "id": "buy-ask-first", "say": "我想要个铁砧",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "note": "没说买：可以查到商人卖，但花钱前要先问",
+    "expect": { "end": ["ask", "reply"], "no_calls": ["spawn_item"], "max_model_calls": 6 } },
+  { "id": "buy-explicit", "say": "帮我买个铁砧",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "expect": { "end": ["reply"], "calls": ["buy:铁砧"], "bag_has": { "铁砧": 1 }, "max_model_calls": 4 } },
+
+  // ================= 难题：多步合成链 =================
+  { "id": "hard-chain-pick-bars", "say": "帮我做把铁镐",
+    "world": { "bag": { "铁矿": 60, "木材": 30 }, "near": ["工作台", "熔炉"] },
+    "note": "要先炼 17 个铁锭（12 做镐 + 5 做铁砧），铁砧会被 craft 自动做好放下",
+    "expect": { "end": ["reply"], "calls": ["craft:铁锭"], "bag_has": { "铁镐": 1 }, "max_model_calls": 8 } },
+  { "id": "hard-chain-pick-from-scratch", "say": "帮我做把铁镐",
+    "world": { "bag": { "铁矿": 60, "木材": 40, "石块": 30, "凝胶": 5 } },
+    "note": "什么制作站都没有：火把 → 熔炉（工作台自动） → 铁锭 → 铁镐（铁砧自动）",
+    "expect": { "end": ["reply"], "bag_has": { "铁镐": 1 }, "max_model_calls": 12 } },
+  { "id": "hard-chain-mine-bars", "say": "帮我炼3个铁锭",
+    "world": { "bag": { "木材": 10 }, "near": ["工作台", "熔炉"], "ores": { "铁": 20 } },
+    "note": "缺 9 个铁矿，一趟最多挖 8 处，要挖两趟",
+    "expect": { "end": ["reply"], "calls": ["mine:铁"], "bag_has": { "铁锭": 3 }, "max_model_calls": 8 } },
+  { "id": "hard-chain-storage", "say": "帮我做个工作台放旁边",
+    "world": { "storage": { "木材": 50 } },
+    "note": "背包空但魔法存储里有木材：craft 会自己取，不该去砍树",
+    "expect": { "end": ["reply"], "no_calls": ["chop"], "near": ["工作台"], "max_model_calls": 5 } },
+  { "id": "hard-two-things", "say": "做个工作台放旁边，再做把木椅",
+    "world": { "bag": { "木材": 30 } },
+    "expect": { "end": ["reply"], "near": ["工作台"], "bag_has": { "木椅": 1 }, "max_model_calls": 6 } },
+  { "id": "hard-quantity", "say": "做3把木椅",
+    "world": { "bag": { "木材": 20 }, "near": ["工作台"] },
+    "expect": { "end": ["reply"], "bag_has": { "木椅": 3 }, "max_model_calls": 4 } },
+  { "id": "hard-question-not-order", "say": "我背包里的木头够做一张桌子吗",
+    "world": { "bag": { "木材": 5 } },
+    "note": "这是问题，不是让它做：查完回答“不够，还差 3 个”",
+    "expect": { "end": ["reply"], "no_calls": ["craft", "chop"], "text_has": ["不够", "还差", "差"], "max_model_calls": 4 } },
+
+  // ================= 难题：花钱前先问价 =================
+  { "id": "hard-price-only", "say": "铁砧多少钱",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "expect": { "end": ["reply"], "calls": ["shop:铁砧"], "no_calls": ["buy"], "text_has": ["50"], "max_model_calls": 3 } },
+  { "id": "hard-price-then-ask", "say": "我想买个铁砧，先告诉我多少钱",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "note": "说了“先告诉我多少钱”：报价，不要直接买",
+    "expect": { "end": ["reply", "ask"], "no_calls": ["buy"], "text_has": ["50"], "max_model_calls": 4 } },
+  { "id": "hard-buy-after-yes", "say": "我想要个铁砧",
+    "steps": [ { "call": "查谁卖：铁砧", "result": "商人 卖铁砧，50银；现在就能买", "tool": "shop" },
+               { "call": "问你：商人卖铁砧，50 银，要买吗？", "result": "玩家回答：买吧", "tool": "" } ],
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "note": "上一轮问了要不要买，玩家答应了",
+    "expect": { "end": ["reply"], "calls": ["buy:铁砧"], "bag_has": { "铁砧": 1 }, "max_model_calls": 3 } },
+  { "id": "hard-buy-after-no", "say": "我想要个铁砧",
+    "steps": [ { "call": "查谁卖：铁砧", "result": "商人 卖铁砧，50银；现在就能买", "tool": "shop" },
+               { "call": "问你：商人卖铁砧，50 银，要买吗？", "result": "玩家回答：算了，太贵了", "tool": "" } ],
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "expect": { "end": ["reply"], "no_calls": ["buy", "spawn_item"], "max_model_calls": 3 } },
+  { "id": "hard-buy-too-poor", "say": "帮我买个铁砧",
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 1200 },
+    "note": "钱不够：如实说，不要换成作弊或乱买别的",
+    "expect": { "end": ["reply"], "no_calls": ["spawn_item"], "text_has": ["钱不够", "不够", "差"], "bag_has": {}, "max_model_calls": 4 } },
+
+  // ================= 难题：连续对话里的指代 =================
+  { "id": "hard-ref-again", "say": "那个再来一个",
+    "dialogue": [ "玩家：帮我做把木椅", "你：做好了：木椅 ×1，放进你背包了。" ],
+    "world": { "bag": { "木材": 20 }, "near": ["工作台"] },
+    "expect": { "end": ["reply"], "calls": ["craft:木椅"], "bag_has": { "木椅": 1 }, "max_model_calls": 3 } },
+  { "id": "hard-ref-buy-it", "say": "那帮我买一个",
+    "dialogue": [ "玩家：哪个NPC卖铁砧", "你：商人卖铁砧，50 银，现在就能买。" ],
+    "world": { "shops": { "铁砧": { "npc": "商人", "price": 5000 } }, "npcs": ["向导", "商人"], "coins": 20000 },
+    "expect": { "end": ["reply"], "calls": ["buy:铁砧"], "bag_has": { "铁砧": 1 }, "max_model_calls": 3 } },
+  { "id": "hard-ref-more", "say": "再给我二十个",
+    "dialogue": [ "玩家：给我十个火把", "你：生成了 火把 ×10，放进你背包了（作弊）。" ],
+    "world": { "cheat": true },
+    "expect": { "end": ["reply"], "calls": ["spawn_item:火把"], "bag_has": { "火把": 20 }, "max_model_calls": 3 } },
+  { "id": "hard-ref-make-it", "say": "那你帮我做一个",
+    "dialogue": [ "玩家：铁砧怎么做", "你：铁砧要 铁锭 ×5，在工作台旁边做。" ],
+    "world": { "bag": { "铁锭": 5 }, "near": ["工作台"] },
+    "expect": { "end": ["reply"], "calls": ["craft:铁砧"], "bag_has": { "铁砧": 1 }, "max_model_calls": 3 } },
+  { "id": "hard-ref-cancel", "say": "算了，不用了",
+    "dialogue": [ "玩家：帮我做个熔炉", "你：熔炉还差 石块 ×20，要我去挖吗？" ],
+    "world": { "bag": { "木材": 30, "火把": 5 }, "near": ["工作台"], "ores": { "石块": 40 } },
+    "note": "玩家取消了：什么都别做，回一句就好",
+    "expect": { "end": ["reply"], "no_calls": ["craft", "mine", "chop"], "max_model_calls": 2 } },
+  { "id": "hard-ref-which", "say": "那它掉什么",
+    "dialogue": [ "玩家：第一个boss打谁", "你：先打克苏鲁之眼，晚上用可疑眼球召唤。" ],
+    "note": "“它”指克苏鲁之眼：交给资料库",
+    "expect": { "end": ["forward"], "max_model_calls": 3, "kb_has": ["克苏鲁之眼", "掉"] } },
+  {
+    "id": "recovery_chain_preview",
+    "say": "做一套铁盔甲",
+    "note": "失败收据注入生产AgentLoop；重规划只记录交接，不执行真实预览或施工。",
+    "recovery": {
+      "task_id": "failed-eval-task",
+      "kind": "craft_chain",
+      "code": "construction_failed",
+      "reason": "铁砧放置位置被占用",
+      "completed": "已完成熔炉和铁锭制作；盔甲尚未验收",
+      "stock": [
+        {
+          "type": 22,
+          "name": "铁锭",
+          "backpack": 40,
+          "chests": 20
+        }
+      ],
+      "surroundings": "工作台和熔炉在附近，主背包有40铁锭，箱子里另有20。",
+      "can_replan": true
+    },
+    "world": {
+      "bag": {
+        "铁锭": 40
+      },
+      "chests": {
+        "铁锭": 20
+      },
+      "near": [
+        "工作台",
+        "熔炉"
+      ]
+    },
+    "expect": {
+      "end": [
+        "replan"
+      ],
+      "calls": [
+        "replan"
+      ],
+      "no_calls": [
+        "craft",
+        "place",
+        "chop",
+        "mine",
+        "buy",
+        "chest_take",
+        "chest_put",
+        "spawn_item",
+        "structure",
+        "cheat_world",
+        "build",
+        "platform",
+        "craft_chain",
+        "garden",
+        "prepare_eye",
+        "expedition",
+        "combat"
+      ],
+      "max_model_calls": 6
+    }
+  },
+  {
+    "id": "recovery_platform_reuse",
+    "say": "三层、每层100格平台",
+    "note": "原地平台任务部分完成后，新资源下按原位置生成预览，必须重新确认。",
+    "recovery": {
+      "task_id": "failed-eval-task",
+      "kind": "platform",
+      "code": "construction_failed",
+      "reason": "平台施工通道受阻",
+      "completed": "已放160格平台，140格尚未通过验收",
+      "stock": [
+        {
+          "type": 94,
+          "name": "木平台",
+          "backpack": 140,
+          "chests": 0
+        }
+      ],
+      "surroundings": "原任务范围保留；主背包有140木平台。",
+      "can_replan": true
+    },
+    "world": {
+      "bag": {
+        "木平台": 140
+      }
+    },
+    "expect": {
+      "end": [
+        "replan",
+        "ask"
+      ],
+      "no_calls": [
+        "craft",
+        "place",
+        "chop",
+        "mine",
+        "buy",
+        "chest_take",
+        "chest_put",
+        "spawn_item",
+        "structure",
+        "cheat_world",
+        "build",
+        "platform",
+        "craft_chain",
+        "garden",
+        "prepare_eye",
+        "expedition",
+        "combat"
+      ],
+      "max_model_calls": 6
+    }
+  },
+  {
+    "id": "recovery_expedition_manual",
+    "say": "挖到地下层",
+    "note": "探路和挖掘失败只查询、询问或停止，不擅自重启挖掘路线。",
+    "recovery": {
+      "task_id": "failed-eval-task",
+      "kind": "expedition",
+      "code": "expedition_failed",
+      "reason": "下方发现熔岩，安全通道不可达",
+      "completed": "已挖12格，发现铁矿并报告；未到地下层",
+      "stock": [
+        {
+          "type": 22,
+          "name": "铁锭",
+          "backpack": 40,
+          "chests": 20
+        }
+      ],
+      "surroundings": "工作台和熔炉在附近，主背包有40铁锭，箱子里另有20。",
+      "can_replan": false
+    },
+    "expect": {
+      "end": [
+        "ask",
+        "reply",
+        "stop"
+      ],
+      "no_calls": [
+        "craft",
+        "place",
+        "chop",
+        "mine",
+        "buy",
+        "chest_take",
+        "chest_put",
+        "spawn_item",
+        "structure",
+        "cheat_world",
+        "build",
+        "platform",
+        "craft_chain",
+        "garden",
+        "prepare_eye",
+        "expedition",
+        "combat",
+        "replan"
+      ],
+      "text_lacks": [
+        "已经挖到地下层"
+      ],
+      "max_model_calls": 6
+    }
+  },
+  {
+    "id": "recovery_no_failure",
+    "say": "先重新规划刚才的任务",
+    "note": "没有失败收据时不得执行replan或自行猜测原任务。",
+    "expect": {
+      "end": [
+        "ask",
+        "reply",
+        "stop"
+      ],
+      "no_calls": [
+        "craft",
+        "place",
+        "chop",
+        "mine",
+        "buy",
+        "chest_take",
+        "chest_put",
+        "spawn_item",
+        "structure",
+        "cheat_world",
+        "build",
+        "platform",
+        "craft_chain",
+        "garden",
+        "prepare_eye",
+        "expedition",
+        "combat"
+      ],
+      "max_model_calls": 6
+    }
+  }
+]

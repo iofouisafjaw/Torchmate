@@ -1,0 +1,4 @@
+# Provenance records hash exact file bytes. Preserve them across Git checkout;
+# editors follow .editorconfig, and intentional edits refresh reviewed hashes.
+* -text
+*.png binary

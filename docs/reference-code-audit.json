@@ -1,0 +1,261 @@
+{
+  "reviewDate": "2026-10-15",
+  "method": "Targeted static source review; reference mods were not built or run. No upstream code/assets incorporated into the delivered mod.",
+  "repositories": [
+    {
+      "repository": "https://github.com/Finesssee/Terra",
+      "commit": "a414170ae3347f0047a4db9bb21533509d777305",
+      "localCheckout": ".runtime/reference-repos/Terra",
+      "licenseObservation": "Root MIT LICENSE present",
+      "reviewedFiles": [
+        {
+          "path": "TerraAIMod/UI/TerraUIState.cs",
+          "sha256": "a51171877b67a467a7d20f2ff90fd226c8ca8ef7313b128b739461a333b5baab",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/UI/TerraUIState.cs"
+        },
+        {
+          "path": "TerraAIMod/UI/ChatPanel.cs",
+          "sha256": "1a80c2fe323ba1280382dfada65439aef942dafbf35cd13f5633bf78774d7473",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/UI/ChatPanel.cs"
+        },
+        {
+          "path": "TerraAIMod/UI/InputField.cs",
+          "sha256": "f59239e7df349ea2eb8e16e50c3a318a2248eaeebfb8ad1baeb720098f603760",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/UI/InputField.cs"
+        },
+        {
+          "path": "TerraAIMod/Systems/TerraManager.cs",
+          "sha256": "0fe887835ce5ed55a4a92b1a51810aa95206731180631ec2377309aeddd58d22",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Systems/TerraManager.cs"
+        },
+        {
+          "path": "TerraAIMod/Systems/TerraSystem.cs",
+          "sha256": "13d8a955f6b9068470851f766ca6f4d93dd003188a35d9d5944423263b7211a0",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Systems/TerraSystem.cs"
+        },
+        {
+          "path": "TerraAIMod/NPCs/TerraNPC.cs",
+          "sha256": "74ee4afa592a6e84d613c3b5a303ca3201249135ea943b9bf21729c6196a1716",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/NPCs/TerraNPC.cs"
+        },
+        {
+          "path": "TerraAIMod/Memory/TerraMemory.cs",
+          "sha256": "ee9d17a88fbc984661db3cb5bd6f9568b2804bc8c73eb602d49f8f27bf5a21d6",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Memory/TerraMemory.cs"
+        },
+        {
+          "path": "TerraAIMod/Memory/WorldKnowledge.cs",
+          "sha256": "675d96745efbeb74d7de2632f30962f17192679f591aaffce59116ecd8359162",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Memory/WorldKnowledge.cs"
+        },
+        {
+          "path": "TerraAIMod/Action/ActionExecutor.cs",
+          "sha256": "dc61f9a65f90ddc91f45479ffa811de817315192ce1137e03ee5a00ac9bd1267",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Action/ActionExecutor.cs"
+        },
+        {
+          "path": "TerraAIMod/AI/TaskPlanner.cs",
+          "sha256": "f9f63f34ea35a13a9a5350e0760b58fb61cffa7ead2e6fec3c170ce412e54b61",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/AI/TaskPlanner.cs"
+        },
+        {
+          "path": "TerraAIMod/Config/TerraConfig.cs",
+          "sha256": "abdd94a5c781619a67406e93a08b930d1d0c65927da73f5de7ded979615cfa06",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Config/TerraConfig.cs"
+        },
+        {
+          "path": "TerraAIMod/Action/Actions/FollowPlayerAction.cs",
+          "sha256": "c2a7cc2302a49111a6d4e703b78d9c450027fb0688bb984937875e3b58633f6c",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Action/Actions/FollowPlayerAction.cs"
+        },
+        {
+          "path": "TerraAIMod/Pathfinding/TerrariaPathfinder.cs",
+          "sha256": "1dfcc1d5f326eaf0f68638ce7f7dc914f11767afe97b89b81250bd2b72b1fb64",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/Pathfinding/TerrariaPathfinder.cs"
+        },
+        {
+          "path": "TerraAIMod/build.txt",
+          "sha256": "68788f4f8640f1d022a8d40b9759e11bf66a147ca68197ec6c733e70ccde6bc2",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/TerraAIMod/build.txt"
+        },
+        {
+          "path": "LICENSE",
+          "sha256": "b4e1a06f3f992c0e6d6b0b9317acfcc43e619980e946624ebafe9e7793efcd4e",
+          "url": "https://github.com/Finesssee/Terra/blob/a414170ae3347f0047a4db9bb21533509d777305/LICENSE"
+        }
+      ]
+    },
+    {
+      "repository": "https://github.com/nakano15/terraguardians",
+      "commit": "d01ce34fc1d0df926ee8b5b53b20dcb3e2621805",
+      "localCheckout": ".runtime/reference-repos/terraguardians",
+      "licenseObservation": "No license-named file found in inspected checkout; do not assume code/assets are reusable",
+      "reviewedFiles": [
+        {
+          "path": "Companion.cs",
+          "sha256": "495c44a86a6a55d80c81912fcd59ae7ddb1c39a01a6bdb5f0cb6a185d6a398b4",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Companion.cs"
+        },
+        {
+          "path": "BehaviorBase.cs",
+          "sha256": "5354fe4179237f42c1cb9f6d7ec3d264c27f5b8b243b70c195ce53642e40b88d",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/BehaviorBase.cs"
+        },
+        {
+          "path": "Behaviors/FollowLeaderBehavior.cs",
+          "sha256": "b341e68d7795df2592830c44caf561efa4866eac8bd02a584fdceacefab90008",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Behaviors/FollowLeaderBehavior.cs"
+        },
+        {
+          "path": "Behaviors/Orders/WaitHereBehavior.cs",
+          "sha256": "aa91d16146335e9853a8904bade9b457086af82f9b3e9feb51e4b635c37de09f",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Behaviors/Orders/WaitHereBehavior.cs"
+        },
+        {
+          "path": "Interfaces/CompanionOrderInterface.cs",
+          "sha256": "b3bf6e9b4e42231687e7a428fa9234c38d0e0ff7045ecc337fc7595dae7be8ab",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/CompanionOrderInterface.cs"
+        },
+        {
+          "path": "Interfaces/Orders/OrdersOrders.cs",
+          "sha256": "f5a02d451e7a35d0679a74185b4b0db4867e89491e364741eb7edd3561d1eb3c",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/Orders/OrdersOrders.cs"
+        },
+        {
+          "path": "Interfaces/GroupMembersInterface.cs",
+          "sha256": "b82b4fc1a3b915d3583914198c419d919a9b001c148130663e68a5d7d2dd1fee",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/GroupMembersInterface.cs"
+        },
+        {
+          "path": "Interfaces/CompanionSelectionInterface.cs",
+          "sha256": "6a42597a6e1160488338d14686ecb6eeec9b4dca0a0af8e765ea057028968996",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/CompanionSelectionInterface.cs"
+        },
+        {
+          "path": "Interfaces/CompanionDialogueInterface.cs",
+          "sha256": "681fe5c3e8e5d0633889bd56072725f8c54308a2d35253f75e12e4b86ff3aa1c",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/CompanionDialogueInterface.cs"
+        },
+        {
+          "path": "Interfaces/CompanionInventoryInterface.cs",
+          "sha256": "5676512ed28bd114e1a059b06238c588892a11ef503ddcfa6d99b6322b7a8374",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/CompanionInventoryInterface.cs"
+        },
+        {
+          "path": "Interfaces/CompanionOverheadTextAndHealthbarInterface.cs",
+          "sha256": "7252de842f3cbf38db9552afb48c2db5caa989257ca521a8fddbd54f436a0674",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/Interfaces/CompanionOverheadTextAndHealthbarInterface.cs"
+        },
+        {
+          "path": "CompanionData.cs",
+          "sha256": "5ad2d2c500920db33c41de3f208ec8218140610ad821f4b6497af30975751fb4",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/CompanionData.cs"
+        },
+        {
+          "path": "PlayerMod.cs",
+          "sha256": "db96e2d052f32832220f857431667918fa6129905f5a3c2ce6f45ba779979b10",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/PlayerMod.cs"
+        },
+        {
+          "path": "WorldMod.cs",
+          "sha256": "1c673ae70d1a1894f8f6e8e544881ec8e226715c792c13e90c83c0fde2ebc2ba",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/WorldMod.cs"
+        },
+        {
+          "path": "SystemMod.cs",
+          "sha256": "d1b311f48da519abe2ae2b4eb14ad96ef4a29bea10609d6d93b19b31f6866200",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/SystemMod.cs"
+        },
+        {
+          "path": "build.txt",
+          "sha256": "2ec10009839f25b501dadf7531f238357a31c4289c4fe390c5e47d6303c99439",
+          "url": "https://github.com/nakano15/terraguardians/blob/d01ce34fc1d0df926ee8b5b53b20dcb3e2621805/build.txt"
+        }
+      ]
+    }
+  ],
+  "plan": "DESIGN.md#源码借鉴与-mod-发布路线2026-10-15",
+  "findings": [
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/UI/ChatPanel.cs",
+      "line": 64,
+      "finding": "Sender, body, role/alignment are modeled separately; add/remove message bubbles incrementally. Adapt this idea to current 80-line bound and preserve scroll position."
+    },
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/UI/TerraUIState.cs",
+      "line": 355,
+      "finding": "UI command routing selects terras.First(); not a full selected-companion UI."
+    },
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/UI/InputField.cs",
+      "line": 103,
+      "finding": "Input is read during Update and Enter is handled directly; keep our engine chat interception and composition-state handling."
+    },
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/Action/ActionExecutor.cs",
+      "line": 141,
+      "finding": "API-key presence gates LLM usage. A local no-key service needs explicit capability/availability handling instead."
+    },
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/Action/ActionExecutor.cs",
+      "line": 412,
+      "finding": "A concurrent result queue is drained on the game thread. No command/session token validation found in this file; retain our existing stale-result checks."
+    },
+    {
+      "project": "Terra",
+      "file": "TerraAIMod/NPCs/TerraNPC.cs",
+      "line": 188,
+      "finding": "SaveData/LoadData exist, but reviewed class sets townNPC=false and has no NeedSaving override; inventory is not serialized here. Persistence is not runtime-verified."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "Interfaces/Orders/OrdersOrders.cs",
+      "line": 10,
+      "finding": "Follow and Wait are direct code-driven orders; adapt as zero-model calls into a shared command service."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "Behaviors/FollowLeaderBehavior.cs",
+      "line": 22,
+      "finding": "Stuck handling escalates to pathing and then pulling back toward owner; adapt bounded recovery to our NPC collision model."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "Interfaces/GroupMembersInterface.cs",
+      "line": 13,
+      "finding": "Compact companion heads and status bars provide a useful HUD pattern; our invulnerable prototype should show real state rather than misleading combat bars."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "Interfaces/CompanionSelectionInterface.cs",
+      "line": 159,
+      "finding": "Portrait/name/personality and call/dismiss controls form a useful profile page. Its rename flow opens native chat; use our own input widget instead."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "Companion.cs",
+      "line": 20,
+      "finding": "Companion inherits Player; build.txt depends on nterrautils. Porting inventory/combat/rendering wholesale is a major architecture change."
+    },
+    {
+      "project": "TerraGuardians",
+      "file": "PlayerMod.cs",
+      "line": 2687,
+      "finding": "Roster and followers are stored in player data; SystemMod also has world data hooks. Our learned preferences must remain world-scoped."
+    }
+  ],
+  "currentArtifact": "tests/verification-v07.json",
+  "notMeasured": [
+    "Reference mod build correctness",
+    "Reference mod in-game behavior",
+    "Relative movement performance",
+    "Public Workshop acceptance",
+    "Clean Windows installation"
+  ],
+  "historicalScope": "Historical review as of 2026-10-15, not the current third-party inventory. See THIRD_PARTY_NOTICES.md and release/license-audit.json for the later ImproveGame adaptation and source replacements."
+}

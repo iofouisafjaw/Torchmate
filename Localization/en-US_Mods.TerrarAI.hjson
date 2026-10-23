@@ -1,0 +1,81 @@
+{
+  "Keybinds": {
+    "OpenChat": {
+      "DisplayName": "Open / close the Qwen chat window"
+    }
+  },
+  "NPCs": {
+    "AIAgentNPC": {
+      "DisplayName": "Qwen Companion"
+    }
+  },
+  "Configs": {
+    "TerrarAI_Config": {
+      "DisplayName": "Local Qwen Companion",
+      "BaseEndpoint": {
+        "Label": "Local endpoint"
+      },
+      "Model": {
+        "Label": "Model alias"
+      },
+      "ApiKey": {
+        "Label": "Optional API key",
+        "Tooltip": "Leave empty for the included local server."
+      },
+      "Temperature": {
+        "Label": "Temperature"
+      },
+      "MaxOutputTokens": {
+        "Label": "Maximum output tokens"
+      },
+      "MaxDecisionSteps": {
+        "Label": "Maximum decisions per instruction"
+      },
+      "RequestTimeoutSeconds": {
+        "Label": "Request timeout (seconds)"
+      },
+      "MaxPlanningSeconds": {
+        "Label": "Planning timeout (seconds)"
+      },
+      "EnableCreativeMode": {
+        "Label": "Creative tools and materials",
+        "Tooltip": "Enables creative movement, generated materials and world-control commands."
+      },
+      "EnableVerboseLogging": {
+        "Label": "Detailed diagnostic logging"
+      },
+      "EnableAutomaticDefense": {
+        "Label": "Automatic defense while following",
+        "Tooltip": "Melee defense against nearby minor enemies while idle and following. Manual protect/clear commands remain available. Excludes town NPCs, pets and bosses."
+      },
+      "EnableReminders": {
+        "Label": "Proactive reminders",
+        "Tooltip": "Dusk, blood moon, low health and nearly full main inventory. At least 60 seconds between notices and 5 minutes between new episodes of the same kind. Does not interrupt tasks."
+      },
+      "EnableNightReminders": {
+        "Label": "Dusk reminder",
+        "Tooltip": "Once when day turns to night. No catch-up notice on entering an ordinary night. Combined with blood moon when that reminder is enabled."
+      },
+      "EnableBloodMoonReminders": {
+        "Label": "Blood moon reminder",
+        "Tooltip": "Once per blood moon, including one already in progress when entering a world."
+      },
+      "EnableLowHealthReminders": {
+        "Label": "Low health reminder",
+        "Tooltip": "Once at 30% life or lower; rearms at 45%. Automatic healing has its own setting, and treatment notices avoid duplicate warnings."
+      },
+      "EnableInventoryReminders": {
+        "Label": "Nearly full inventory reminder",
+        "Tooltip": "Once at 3 or fewer empty slots in the 50-slot main inventory. Rearms at 8 free slots. Excludes coin/ammo slots and extra storage."
+      },
+      "EnableAutomaticHealing": {
+        "Label": "Automatic healing at low health",
+        "Tooltip": "Enabled by default. Uses unfavorited vanilla healing/restoration potions from the 50-slot main inventory while the companion is present. Respects native cooldowns. Prefers no overheal; allows small overflow, with an emergency fallback at 15% life. Does not fetch storage. Independent of reminders."
+      },
+      "AutoHealingThresholdPercent": {
+        "Label": "Automatic healing life threshold (%)",
+        "Tooltip": "Default 30%, range 10–50%, using effective maximum life. No use during potion cooldown, blocked item use, pause or death."
+      }
+    }
+  }
+}

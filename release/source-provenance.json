@@ -1,0 +1,704 @@
+{
+  "schemaVersion": 1,
+  "version": "0.10.34",
+  "reviewedAt": "2026-10-23",
+  "upstreamCommit": "3a0f316962332cf3abab922f247ffa589766362c",
+  "publicDistributionApproved": false,
+  "cleanRoomClaim": false,
+  "review": "docs/source-replacement.md",
+  "screening": {
+    "thresholdTokens": 75,
+    "method": "longest contiguous lexical token match across current and pinned C# files",
+    "scannedCurrentCSharpFiles": 118,
+    "inheritedCSharpFiles": 30,
+    "matches": [
+      {
+        "file": "Content/Actions/AgentAction.cs",
+        "upstreamFile": "Content/Actions/AgentAction.cs",
+        "tokens": 114,
+        "review": "public-result-contract"
+      }
+    ],
+    "unreviewedMatches": 0,
+    "limitation": "A screening aid; smaller/reworked fragments and legal status require provenance review. Not a clean-room claim."
+  },
+  "removed": [
+    "Content/Actions/ActionRegistry.cs",
+    "Content/Actions/BuildAction.cs",
+    "Content/NPCs/AIAgentRenderer.cs",
+    "Content/Players/SharedLifePlayer.cs",
+    "Content/Systems/ActionParameterReader.cs",
+    "Content/Systems/ActionValidator.cs",
+    "Content/Systems/MultiAgentCoordinator.cs",
+    "Content/Systems/WorldContext.cs",
+    "Content/Systems/ModelRouter.cs",
+    "plan.md"
+  ],
+  "upstreamFiles": [
+    {
+      "path": "Common/Commands/AgentCommand.cs",
+      "upstreamSha256": "abc66a525d70adc34123577b0721833fdb65ca2442a978b733d74dab7289b921",
+      "preReplacementSha256": "351d023f3188032ca7c307e8e7d3edf45571d995256297724e1bacfa88b85979",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Common/Commands/TestAPICommand.cs",
+      "upstreamSha256": "bb78bd8db93bfbe7d39efbd5a0991ef47f9bd51dfe8f8b63bdfd846e964000f0",
+      "preReplacementSha256": "5a0dae642739230669f3f5f43e927c8064e99198172a51ae94e80b2197e58a8e",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/ActionRegistry.cs",
+      "upstreamSha256": "f2d7b9a4d4fb99b2af051c5f4b1ded07571197768ac484ce06666b37ef50cdc7",
+      "preReplacementSha256": "f2d7b9a4d4fb99b2af051c5f4b1ded07571197768ac484ce06666b37ef50cdc7",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Actions/AgentAction.cs",
+      "upstreamSha256": "ba64ba38ce35adc818a01841e55f56757a75f5bcb71240e30948a4c633056d42",
+      "preReplacementSha256": "a96364d88691f1cde400bc311e9c344dc6437eaae3a7060aebd8368608e2031d",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/BuildAction.cs",
+      "upstreamSha256": "cb2e2a7b050265746d6d311e9a88143a31aabcfd226a3faf3d60dbdbd42797ef",
+      "preReplacementSha256": "cb2e2a7b050265746d6d311e9a88143a31aabcfd226a3faf3d60dbdbd42797ef",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Actions/ChopAction.cs",
+      "upstreamSha256": "5f51823a5ddf8e78969bc2c64690e4e3711bd318fca4aa76d11618447a3c0c34",
+      "preReplacementSha256": "4841c6bcd04e5ce9ba8ccafda7dd04f96eefc400c2312c198724ee46a90c4669",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/CompleteAction.cs",
+      "upstreamSha256": "00e7be2178ff52b4b9c61ff161faec8606c6de84d2b4ca972796ac8164513f8c",
+      "preReplacementSha256": "7d3b5ebf6359555bd5893443f22804466d58a31a25057e9988a21cf399d94b11",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/FailureAction.cs",
+      "upstreamSha256": "7c82d65df7fe1c64c9bd52af0dabc371374aaaa82d2dd7e6ec47acc32e9b21a1",
+      "preReplacementSha256": "7c82d65df7fe1c64c9bd52af0dabc371374aaaa82d2dd7e6ec47acc32e9b21a1",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/HellevatorAction.cs",
+      "upstreamSha256": "734a160a2675d2d93e0421b1bb407f282e91dc87a78b5aa2b8010bcf2eb8931d",
+      "preReplacementSha256": "03527d52cb4f2012de8949d959fabf0a85f2032156aa631657739d59eff52ffb",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/MineAction.cs",
+      "upstreamSha256": "5e0684e56fdae524fdcc68065425b5e221b9c271697ff0b27325fd8779bb3961",
+      "preReplacementSha256": "8220f7cf21beedbcd55aa8aa0eb6e41dd854cb587159c52a03e3a67e7eaea503",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/MoveAction.cs",
+      "upstreamSha256": "de18b902bca71c9b7c4e3712c0892598d8ee03b7d8fbaca092b4c2fd0f539e58",
+      "preReplacementSha256": "35d230fcbf717a90920a32cc55a9ce63c4b73f769512d3e87e15203a7ef5403c",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/SayAction.cs",
+      "upstreamSha256": "9c1040a1277e5d5fed032100f5a7ecb41d07f7249966de863f74dafb18016673",
+      "preReplacementSha256": "577b4a1d1fd98300f8d31309d10207e0975656f0161e81f48265a04c4faf651f",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Actions/TileTargetAction.cs",
+      "upstreamSha256": "d07d690089688ff1a8f00b22af8f9c7afa7d1f93f4be1ccae8d77255cd226b6f",
+      "preReplacementSha256": "d07d690089688ff1a8f00b22af8f9c7afa7d1f93f4be1ccae8d77255cd226b6f",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/NPCs/AIAgentNPC.cs",
+      "upstreamSha256": "4bff426cc07a31317a2acfdea09aea874386b6a51a0400335459527050d73a42",
+      "preReplacementSha256": "31f4b1ba21bea17dd2b19fb2a1a56069b6073ece3ef3e8545189d1691fa8eaf6",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/NPCs/AIAgentRenderer.cs",
+      "upstreamSha256": "be978e5bd77f3b7b00cd5e5b1dbd3a1866578f9202c748bb053c8c7cdb314dbb",
+      "preReplacementSha256": "be978e5bd77f3b7b00cd5e5b1dbd3a1866578f9202c748bb053c8c7cdb314dbb",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Players/SharedLifePlayer.cs",
+      "upstreamSha256": "7e6dac177a50fa84042be41042426694ffc89cbda85f3bcaa825e89d6648b9f1",
+      "preReplacementSha256": "7e6dac177a50fa84042be41042426694ffc89cbda85f3bcaa825e89d6648b9f1",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Systems/ActionParameterReader.cs",
+      "upstreamSha256": "bc0f34857a7d2995088d54bc0094371de5dc808eb9c7343109a88e4d5c1acca2",
+      "preReplacementSha256": "bc0f34857a7d2995088d54bc0094371de5dc808eb9c7343109a88e4d5c1acca2",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Systems/ActionParser.cs",
+      "upstreamSha256": "90635d4f2b401359b44e083eebc09c1302bcbe76c687dd187b2e620716683a76",
+      "preReplacementSha256": "a03c9b2bf7393d40a8c39ebeb48a014306e1247d72e38a2101ec0e176341fb70",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/ActionValidator.cs",
+      "upstreamSha256": "cf035d3582b16fcd6609601d684e13a014193ce92f615ecc8fe490c1117a7777",
+      "preReplacementSha256": "cf035d3582b16fcd6609601d684e13a014193ce92f615ecc8fe490c1117a7777",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Systems/ChatCoordinator.cs",
+      "upstreamSha256": "588694c16a03d00fd39b760d44b80664afbf78b29ff4a34eb188997c4da71b34",
+      "preReplacementSha256": "96859541a5d2a46e1d2965ecebf97833e08cc018ec0822d60fe7ef9e150923d3",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/MovementHelper.cs",
+      "upstreamSha256": "4f43e9c25cb664d636072d28c473f86a03ee4a67c329d7b7ae8d95c168ba0cbc",
+      "preReplacementSha256": "77a75cc9e281817f2a5e838d948946f55c62312382b05b322e28bf40f3cd4421",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/MultiAgentCoordinator.cs",
+      "upstreamSha256": "9d5b8dc2e473b6c823577ed43df2ef65469c56a10c46c854cd984e0fd7820da4",
+      "preReplacementSha256": "9d5b8dc2e473b6c823577ed43df2ef65469c56a10c46c854cd984e0fd7820da4",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Systems/ServerAuthority.cs",
+      "upstreamSha256": "758b3f642d9ef8fee6e00f5a345800ed4fcf6f21f66a0352b03e9e01bde98a81",
+      "preReplacementSha256": "284e6acb4c108d78d2476748022656424f23cb76344979915dfef849efba11b4",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/ToolSelector.cs",
+      "upstreamSha256": "9bb19c277007124a0475a6925018da4491a969759f3026a55ee73d0ca5c217ea",
+      "preReplacementSha256": "6d7d9b9d296d4370e487f5b67fd1712a8c19f2b9426545c4156cdcca1022a2d1",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/TreeHelper.cs",
+      "upstreamSha256": "bb6e7c54f8b6055de78b3a34a1111a3a8230d4bfd1fadfb5008ff1a7aa41cb94",
+      "preReplacementSha256": "60bf6d910802065b20acd9bb54f32ce1600253088bba0de4111b622114339b22",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "Content/Systems/WorldContext.cs",
+      "upstreamSha256": "ad327b25b3a286fea151c4987b7391e7079e07b401ce59f3a60203e3baf2b03a",
+      "preReplacementSha256": "ad327b25b3a286fea151c4987b7391e7079e07b401ce59f3a60203e3baf2b03a",
+      "disposition": "removed"
+    },
+    {
+      "path": "Content/Systems/XAIClient.cs",
+      "upstreamSha256": "3e66da5554aa34f7055b2dc979a0e7ec0ff51735f007626f52f28d6a985aa0de",
+      "preReplacementSha256": "98fd79020d601cb0563e74af693c7ccf4fe028caf05360254c174ebe68bfe03d",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "TerrarAI.cs",
+      "upstreamSha256": "95738d0bd76685f7a96ebf1b04f8540864ab3371a38194cb940a99616ab9ba58",
+      "preReplacementSha256": "95738d0bd76685f7a96ebf1b04f8540864ab3371a38194cb940a99616ab9ba58",
+      "disposition": "implementation-replaced-local-integration-retained"
+    },
+    {
+      "path": "TerrarAI_Config.cs",
+      "upstreamSha256": "97564b1d5343561f804f1cdac57bf25fe23917fa9a4d83aca33667c8188710ab",
+      "preReplacementSha256": "16878f26e3294661cb74403d10a0988ee1866b56deaed8627856970078a0698f",
+      "disposition": "compatibility-declarations-recreated"
+    },
+    {
+      "path": "icon.png",
+      "upstreamSha256": "3b1eec040eeab7bf9ff06a30f8cc786ace431f7a7d985da885bc8b08145f1ade",
+      "preReplacementSha256": "3b1eec040eeab7bf9ff06a30f8cc786ace431f7a7d985da885bc8b08145f1ade",
+      "disposition": "original-code-native-art"
+    },
+    {
+      "path": "icon_small.png",
+      "upstreamSha256": "12819e261f45dbc117b742a14b3a6a49f84bb31c1d6a9a24ad0d203833fc59ce",
+      "preReplacementSha256": "12819e261f45dbc117b742a14b3a6a49f84bb31c1d6a9a24ad0d203833fc59ce",
+      "disposition": "original-code-native-art"
+    }
+  ],
+  "files": {
+    "Common/Commands/AgentCommand.cs": {
+      "sha256": "558e74f67cd930ddd4d3150ae71fb5437787970fbc847fd6e434c2424712a05c"
+    },
+    "Common/Commands/TestAPICommand.cs": {
+      "sha256": "97fd76f04ea6e8a117313a8ab6433058c8c74804afbcea1dcd939198c65a07a6"
+    },
+    "Content/Actions/AgentAction.cs": {
+      "sha256": "2532729b2cb1a8ab4423e28f646339d644452131088dd461155b79ddf44c0149"
+    },
+    "Content/Actions/ChopAction.cs": {
+      "sha256": "09de537cf74d1f2ff357d3e2d6cdc39f658920ab239be5a2fb1f6d79d5ae94e0"
+    },
+    "Content/Actions/CompleteAction.cs": {
+      "sha256": "e04862ff5c1026f4d072a99b630217ad342628c75587016b8a227749549a8c78"
+    },
+    "Content/Actions/FailureAction.cs": {
+      "sha256": "398fd77b37aef76637baeeab6728d7b4f78d6e91edca742a98b93e1bf7da3491"
+    },
+    "Content/Actions/HellevatorAction.cs": {
+      "sha256": "6026e22ed4d642c7302c091071a5dbaf55da795282b7c9decc3028e5c77cd046"
+    },
+    "Content/Actions/MineAction.cs": {
+      "sha256": "3ee19dca96f49a223f48d3e31ef555fc09c1e007b6d8551a08fce016902db36d"
+    },
+    "Content/Actions/MoveAction.cs": {
+      "sha256": "511e5a76d6d273f3774e3fc5fad0b7be2014c8d3624391ad3efc03f1681dec39"
+    },
+    "Content/Actions/SayAction.cs": {
+      "sha256": "92fc36e1b1d8dc7ebeb2705087a1eeeb878de8f1c4500ea2b3d14c0a41e68e9d"
+    },
+    "Content/Actions/TileTargetAction.cs": {
+      "sha256": "19eb332a71f0bd39501a4dfab8f4dc16736d6bcdf5836fcacc1f56fe7fb9bd4c"
+    },
+    "Content/Actions/TileWork.cs": {
+      "sha256": "e8994bcd77ba63833d1c0123788281248ab74c190bc5cb5f12ddd10621e570c0"
+    },
+    "Content/Companion/AgentLoop.cs": {
+      "sha256": "8145511e0ed80a3670dfbc6f8fb79b67f5ebfaf00bea988e4fca7c1ccecdf225"
+    },
+    "Content/Companion/AgentProtocol.cs": {
+      "sha256": "7ed6f92cf12711f073b170834088f7b64d6ecd130359aea82540115e347334c6"
+    },
+    "Content/Companion/ArenaPreparation.cs": {
+      "sha256": "db7850bbc93c9d550aee1aa954eaa844219bab0ed4763898ef5f798e7de33862"
+    },
+    "Content/Companion/AutomaticHealing.cs": {
+      "sha256": "14832c913b051adaf577f580471813c89cec9c61a9dc2b2c93c2e9714af7d432"
+    },
+    "Content/Companion/BrainInquiryProtocol.cs": {
+      "sha256": "3ee8017e0d214ef894395298a1e7425ae4b6c802cb53e73e2ae698849100d105"
+    },
+    "Content/Companion/ChatTags.cs": {
+      "sha256": "a3009314e56f5216ce5e5629b90f7a7abb734b3cb59027beca0aa55d368298b7"
+    },
+    "Content/Companion/CheatWorld.cs": {
+      "sha256": "75bb14265bc733b8ed4184593431067958fa7e867d0fbabc1b5b5a363bbdb02f"
+    },
+    "Content/Companion/ChestRequest.cs": {
+      "sha256": "509d0f530c6e06f0cfdd83e2293693f1fa2f6daca2ef510de187dc400f6ee530"
+    },
+    "Content/Companion/ClarificationTicket.cs": {
+      "sha256": "a8832a7fbfb97260926843a3f97a19e2aae98e5065c100fc2afe43b419065266"
+    },
+    "Content/Companion/CollaborationPlan.cs": {
+      "sha256": "a923a0a37eb00fdd4ac5088f2feffab3e7650ccddb90f9d949bc357ff2016d25"
+    },
+    "Content/Companion/CombatJob.cs": {
+      "sha256": "b9e94dd0474eedf617cb5902ba04aed7b737473b94871efa08e7c83ef143d648"
+    },
+    "Content/Companion/CombatRequest.cs": {
+      "sha256": "0042d611715f894724d054b8a1a2e34d144bbfca7b5d2032d4b31a15f3802b3d"
+    },
+    "Content/Companion/CompanionControl.cs": {
+      "sha256": "e5643bf69537ff68688e2abbb7032b6086707fe73e3e5e9034e20f1c8c59f7a3"
+    },
+    "Content/Companion/CompanionPolicy.cs": {
+      "sha256": "147911f423f9e5fa5d0555f840313bfe17aad355cebc27dce798127edc4d55f9"
+    },
+    "Content/Companion/CompanionProtocol.cs": {
+      "sha256": "844e1dd5bc0b92e1f7e8ad44e95c61f6298f31554f5de10d9bebc45cbe72c5a8"
+    },
+    "Content/Companion/CompanionStore.cs": {
+      "sha256": "5cf6f770f31ae519e0312b45083bcd57f59d9825d0855fc215046d7e7226bff8"
+    },
+    "Content/Companion/ContainerInventory.cs": {
+      "sha256": "c19d2022b8975bdf8a1f1ce4b31ef40e49bd9748577145a471b3b8c3ffc7a532"
+    },
+    "Content/Companion/CraftChainJob.cs": {
+      "sha256": "2f71f131b3eda9e23afdd3cfd1378331f7d41c5af0ad18fc4a7a927c283f3eb4"
+    },
+    "Content/Companion/CraftChainPlan.cs": {
+      "sha256": "e6937c9e3a604061541c8653c5a32e64b88635284f48c7d38aeff663961cd5d9"
+    },
+    "Content/Companion/CraftChainRequest.cs": {
+      "sha256": "74a82ea893cff7d2f927b25a6b468fef5cd704b87355c34ee2ab5d7d5a47d9be"
+    },
+    "Content/Companion/EpisodeRecorder.cs": {
+      "sha256": "95477b4ccb0789e3645e4926327681fcd8924e30c72d3202eb5caadc0454da01"
+    },
+    "Content/Companion/Expedition.cs": {
+      "sha256": "ef6dea61a52bf7af9a6e287bc4f0923878c7d84733801b3dcefa15e578b4a7cc"
+    },
+    "Content/Companion/Gardening.cs": {
+      "sha256": "317e3f18371508fe3a3d80366840fa45d7cea54c41a34739f822acf54a651362"
+    },
+    "Content/Companion/HousingRepair.cs": {
+      "sha256": "893de086c216943c4755844d753a4dfa4fae18fe852864097d8538d755c307a8"
+    },
+    "Content/Companion/IngredientAllocation.cs": {
+      "sha256": "8b90262d7342bf5a22cd74cf57c5aaecf64dd9d679af0ec1cc8cfc8931f2930a"
+    },
+    "Content/Companion/InquiryProtocol.cs": {
+      "sha256": "2a110f707d8ca4340c816fc63402a18add5f029739801c11cec6d0e80074e135"
+    },
+    "Content/Companion/LocalModelClient.cs": {
+      "sha256": "bb445f4ddd3430f3855dc05bb0f90b596c51d25e4a6f2e1f9bb2ca0e91528e9b"
+    },
+    "Content/Companion/LocationQuery.cs": {
+      "sha256": "e13481607fad474225dcb418899233d084d6fe14cc12d7a0e87edad65502b21d"
+    },
+    "Content/Companion/ObservationPolicy.cs": {
+      "sha256": "d6f5b95ef79273180c24a15d708ed69b89043a273d72103396cdd9e4368705b4"
+    },
+    "Content/Companion/OreTunnel.cs": {
+      "sha256": "9b6e1f6475bb8296b61011f5087a5b4f0dd5377f08dbded0f21c6e0dffcf3c0e"
+    },
+    "Content/Companion/PlatformBlueprint.cs": {
+      "sha256": "8493c0ecac00c0d50d2a1f77150cfd4a397a9928495b6e99433a080998e48da1"
+    },
+    "Content/Companion/PlatformRequest.cs": {
+      "sha256": "0fd287e8d907765d495b7c5bcc0f6825e9b32dac491a7f4d4a1ccd3a525a2382"
+    },
+    "Content/Companion/PlatformSupplyJob.cs": {
+      "sha256": "027347fdd45860b639211921e68afffbd957ce95a28c9d0697de1c01258401a7"
+    },
+    "Content/Companion/PreferenceProtocol.cs": {
+      "sha256": "38eb96bcb0b433d8949c6163193d000766b8400ae020c6f6264dafd4c4345244"
+    },
+    "Content/Companion/ProactiveReminders.cs": {
+      "sha256": "94023ee293dc5d832274c751d84c8515b915a47665b1c2e14a800a66c99cb035"
+    },
+    "Content/Companion/StructurePlan.cs": {
+      "sha256": "2d131ca3deb3594d0377161f218ef4b9cc0137d98cbe42f1d9ca83d2cc2a49f3"
+    },
+    "Content/Companion/TaskGoal.cs": {
+      "sha256": "3433e9a03e7c9edd58e790abd48c428a012cb94a91da7b2491261c038b18282e"
+    },
+    "Content/Companion/TaskRecovery.cs": {
+      "sha256": "e2cd5ac55488cb198ad3b0ed48c6ff8a22047375aa09f55a93e6a1466d77155d"
+    },
+    "Content/Companion/TextEntryKeys.cs": {
+      "sha256": "8274bc2dcb4790e2b2ae0bf83e7391cdab026950fa1491cea8e5a91d72d42544"
+    },
+    "Content/Companion/WikiInquiryProtocol.cs": {
+      "sha256": "e92c9e92e5c1f106e20732b8bb2221d6148edad203ef579e46ccb30ca66b3d8a"
+    },
+    "Content/Companion/WikiKnowledge.cs": {
+      "sha256": "38516d7fb74e578bcc7144fe0160f3bd62d71b58f58d45ef41cba6e00319c118"
+    },
+    "Content/Companion/WikiSqlite.cs": {
+      "sha256": "e06339f614aae16b9f14e40f6bc03afb1e7c7881195779f07f5f83994b666937"
+    },
+    "Content/Companion/WorkshopInventory.cs": {
+      "sha256": "3cdff6ca53a9b681cda8b105c77aa3d260e7a902eaed9f896076f041c519306f"
+    },
+    "Content/NPCs/AIAgentNPC.cs": {
+      "sha256": "0094faaccce7e3c4623828a415115afda2ad4972c03b18a6d8d8e67e6623afe6"
+    },
+    "Content/Systems/ActionParser.cs": {
+      "sha256": "c27070ca440f0e2e1a8f612597e3c954ae0908ae2a8dbe93669d38e8c1e95d7c"
+    },
+    "Content/Systems/ArenaWorkshop.cs": {
+      "sha256": "094b55fcfafdcb5f2557b86e7225beb8fee783a3919084048c19765feb89aff9"
+    },
+    "Content/Systems/ChatCoordinator.cs": {
+      "sha256": "6fe2db321988b75f501cd375a05fe48f408bc3c1d1b5d92817d38318558de172"
+    },
+    "Content/Systems/CheatTools.cs": {
+      "sha256": "c6693d19aba44f1dc71bdabe43beb1209798bd7d7966f568a2645e4415ba1a13"
+    },
+    "Content/Systems/CheatWorldTools.cs": {
+      "sha256": "118a2d70e43fe9c0195d69ed1ce69d7092218ed6a7c0785f039d8aa6d282d3e4"
+    },
+    "Content/Systems/CollaborationWorkshop.cs": {
+      "sha256": "0ef6f15d4047ea6eaad60672b4b40391bee43de2e3601913c4292055f25fdc5c"
+    },
+    "Content/Systems/CompanionAgent.cs": {
+      "sha256": "f12d9d8803283acb221ac673e46a83c3106cfc8c9173f561a004635bb064e277"
+    },
+    "Content/Systems/CompanionCollaborationSystem.cs": {
+      "sha256": "a78b5908c087f7d25d4b40158fb7bf61cb76e60c944ec4a313fffd64121bd0b0"
+    },
+    "Content/Systems/CompanionCombatSystem.cs": {
+      "sha256": "447aa8232d5a82bf7b9131bc303605c42ad333b84fdb744cbfa62b47aff00dc0"
+    },
+    "Content/Systems/CompanionCommandService.cs": {
+      "sha256": "4f0a1c9c1386bfc52aa084548d70a823bd5a2b3c9674da8357fb59c7e61f3aa0"
+    },
+    "Content/Systems/CompanionConstructionSystem.cs": {
+      "sha256": "707c0a284abb1b5e4b06e04bcbf4953436e5976f4926f9744d884447469c28c9"
+    },
+    "Content/Systems/CompanionDialogueSystem.cs": {
+      "sha256": "05af666c205a643d9738fc24d660c68cdc2a8d3e1519c22c0b3ff93c01f9c1cb"
+    },
+    "Content/Systems/CompanionDrops.cs": {
+      "sha256": "1ef06b6e6682d69e886df2bbb0cf5049540710195223508a7fe37c6636f3d95c"
+    },
+    "Content/Systems/CompanionExpeditionSystem.cs": {
+      "sha256": "e7076caf642cb31c9569010ab65760cbbc6464bbf64df33a9b15e7396cc10df2"
+    },
+    "Content/Systems/CompanionGardenSystem.cs": {
+      "sha256": "17ce1efd8bd0b7792cbf706c3399507b3edb309968d332bb09c90661275ddc0a"
+    },
+    "Content/Systems/CompanionHealing.cs": {
+      "sha256": "62ec71b15efdc83237e34f5ccdbfa2195fb3304b65083d606ba9f303ed56f04a"
+    },
+    "Content/Systems/CompanionInquirySystem.cs": {
+      "sha256": "e232d0b17f2ef1c5d52d907c83aca238bb1fd9136da1ac61e45844169cf0e83e"
+    },
+    "Content/Systems/CompanionMemorySystem.cs": {
+      "sha256": "817d56c417cf9a81884f3bb53dea75f718e8a4d87cab8527c138311248db0100"
+    },
+    "Content/Systems/CompanionMessages.cs": {
+      "sha256": "5360c0015ca0314819615a1805c8863c57733e608471e777882b07a9aca6e8e6"
+    },
+    "Content/Systems/CompanionObservation.cs": {
+      "sha256": "516926080eb6d928c6fa56c24625cdb936b530f16ce8efcc593a3b252abeeef3"
+    },
+    "Content/Systems/CompanionPrompt.cs": {
+      "sha256": "e66a0ea1d3718fd338ff0f7fce9fbedac66f40deff1db1bbd3497ff6140987d4"
+    },
+    "Content/Systems/CompanionRecoverySystem.cs": {
+      "sha256": "c989eabd12c2e2bf052492894a4b9e00f22f6a3a361a330380639940aea5bcd6"
+    },
+    "Content/Systems/CompanionReminderSystem.cs": {
+      "sha256": "942779f50a3055425e147d16f204182c080869253fc8e551768aca13628e6879"
+    },
+    "Content/Systems/CompanionTaskTracker.cs": {
+      "sha256": "720fb98e89ae594b2c5a710a7b981dd2207c01962998e5004daa715471e9f2ff"
+    },
+    "Content/Systems/CompanionUISystem.cs": {
+      "sha256": "6fde45858c71396bad9de594437a0031ca0f9c6514e724d822c9c84023265506"
+    },
+    "Content/Systems/CompanionWorldInfo.cs": {
+      "sha256": "05353e87a1bd24a1a30dc329a3096ed7aa285976a862b195f339dca1d5f080dd"
+    },
+    "Content/Systems/CraftChainSystem.cs": {
+      "sha256": "24ada9c4737d40bd39afb1fa8a0f04d5e5b9d6b0b2de6ebfd3f0db929445f143"
+    },
+    "Content/Systems/Crafting.cs": {
+      "sha256": "eb134b4c308408d1f094fac2d0d01cc6ccc6fb21831c1176d9e47278d6dc453c"
+    },
+    "Content/Systems/DiggingSafety.cs": {
+      "sha256": "3a6c8647ca5450e48af9f5cb033424af1318c3a2a6f3745f6805456746c67c2e"
+    },
+    "Content/Systems/FollowNavigation.cs": {
+      "sha256": "0a66e842046909cce8c0028e93bf0cf29733d0fbf7ac40315d063ce87097297a"
+    },
+    "Content/Systems/GardenWorld.cs": {
+      "sha256": "d278bdedce5ba797d7f6de4f4eda99cbef83315ff5dd59503289ae80b90a6728"
+    },
+    "Content/Systems/GatherTargets.cs": {
+      "sha256": "24b040c4ec5d9091e8e89af9d2715f315153d08ad2650ff414f3b0387ace4a53"
+    },
+    "Content/Systems/HousingInspector.cs": {
+      "sha256": "ece800c254fceb9290601cb027126896a30504e54e739a768cbbe339017b035c"
+    },
+    "Content/Systems/HousingWorkshop.cs": {
+      "sha256": "9fad8772074b7e1e52ecd1722d3bfbaba90303da15caaa08a3a80c49b2990706"
+    },
+    "Content/Systems/MapLocationSystem.cs": {
+      "sha256": "6f8c8bbbf6e0d223912be0c36eef948ea05840717d72029e0b356e8468f8dc91"
+    },
+    "Content/Systems/ModIntegration.cs": {
+      "sha256": "dea0eaad510790ff99171e814afa14c9d726366cba0d6a0696b829acf1cd32ae"
+    },
+    "Content/Systems/ModTools.cs": {
+      "sha256": "e50141266c152ab81dfbf6e10b2c829d88124c45a233379a4dbb48767dddeafc"
+    },
+    "Content/Systems/MovementHelper.cs": {
+      "sha256": "168e0ed4c19af1ec5e6394399f8c82e6248cc5388b1a0a77ec16df5551716aec"
+    },
+    "Content/Systems/NativeOreTunnelSite.cs": {
+      "sha256": "61b85cb2b4b42d1485f366bd99b1c2f8dfc87380df8676da163e3fa5ba8d0164"
+    },
+    "Content/Systems/NearbyChests.cs": {
+      "sha256": "fb5f50ac7a80bfdaec4064af9e784ae886a3e552fe1638d158e94d450e783522"
+    },
+    "Content/Systems/OreTunnelWorkshop.cs": {
+      "sha256": "e7ccc1a2b08e7d15d1a20c95344f13c5110edc43d407f4a54032573fa14eff3c"
+    },
+    "Content/Systems/PlatformSupply.cs": {
+      "sha256": "191f15857f43a58e0baa662a933252ad1a963b0306287b6ac7c13ca137b4b6b5"
+    },
+    "Content/Systems/ProgramGathering.cs": {
+      "sha256": "6ed88c27fea5902c17239246a00c2d988151225e21fd77a530f217cf63bbda6e"
+    },
+    "Content/Systems/RecoveryPlanning.cs": {
+      "sha256": "fb36c84834793b85f0a8cf0cce6bb1dc45fcca39f2b22d415c815ced1a000046"
+    },
+    "Content/Systems/RepairCrafting.cs": {
+      "sha256": "b8701a4289ac3d28cb0bf94d6fe6cc580ec7da49f4c4f650fdedf9c385b69fa6"
+    },
+    "Content/Systems/ServerAuthority.cs": {
+      "sha256": "6a16462d0a31c9456faea2cab4c7e0d69d7d90b343eb8250739d5a4059984db2"
+    },
+    "Content/Systems/StructureLibrary.cs": {
+      "sha256": "f4eaa56d931d0cac0acbc1275b8c2c50da10b5770b1ad50f4f45a972b342bce6"
+    },
+    "Content/Systems/StructureWorkshop.cs": {
+      "sha256": "12089bb5b3242895a1db9e05f627e07541371444cca73f3cb424bc2663242003"
+    },
+    "Content/Systems/TaskTargetClaims.cs": {
+      "sha256": "919ca5c621acdb0506c151e42acf2bc86305d09ba4e1baaa5c6aa5edf705eb73"
+    },
+    "Content/Systems/TerrainRoute.cs": {
+      "sha256": "d83caba163a1f19139e92ad136f2ef960226b91f26a5e41350ad30357bf76b73"
+    },
+    "Content/Systems/ToolSelector.cs": {
+      "sha256": "57ed1b3c17754f7591e8049c2b899748c94092cba6e3457a25123b498532109c"
+    },
+    "Content/Systems/TreeHelper.cs": {
+      "sha256": "62efb40aec172b7efe0353e08a08f211ab65aaaed6942221355cfbb7e4a1ef23"
+    },
+    "Content/Systems/Vendor/QotPlaceStyle.cs": {
+      "sha256": "3eb44dcd68ef46f9390099930b157a9dae3c97861646970b85f5881439a5b09c"
+    },
+    "Content/Systems/XAIClient.cs": {
+      "sha256": "dde90be7455910c12f37c823bc81a67846b6774f00991a54c90a8a3b89b00721"
+    },
+    "Content/UI/ChatWindow.cs": {
+      "sha256": "b4d82b66b3c89d23bfd965c16313899ecd5257cfa9f14fd1cf244d47b6aa8a95"
+    },
+    "Content/UI/CompanionHUD.cs": {
+      "sha256": "dc44378d019b808ce8d51bfe4e0f11705eb056560bf25b6791d4e10e9d5f0a4f"
+    },
+    "Content/UI/CompanionInput.cs": {
+      "sha256": "d9bcdb85f3326eedd7ffe16797af2776f61b3ad424d48a23a867975d3bc5662e"
+    },
+    "Content/UI/PixelWidgets.cs": {
+      "sha256": "1b8ef338ebd895f0133d27aa5a0ccbc616208bfc8f3440bac3866585b817cfd4"
+    },
+    "Content/UI/PlatformConstructionOverlay.cs": {
+      "sha256": "74641e760e860f0a41791541839502e706b34920175d1d3d5603014136e11ba2"
+    },
+    "Content/UI/StructureOverlay.cs": {
+      "sha256": "d91cfe138ce5aa1061d788edadc9a59d851ac3dbd9054c9c530b7067b9312c09"
+    },
+    "LICENSE": {
+      "sha256": "2ea590ac04d82b7aa17c0d09db6ffd50995244f22ea3e2b56e6c3cc9d60c0afc"
+    },
+    "LICENSE_STATUS.md": {
+      "sha256": "14aefe3df0d880800362f08c4d1017c6fe651f6ae790160fc88673b3f091402b"
+    },
+    "Localization/en-US_Mods.TerrarAI.hjson": {
+      "sha256": "246ee2057f236547fe94a0ddbb96e7d663918b97118956f0b49d10cb69b3a1b4"
+    },
+    "Localization/zh-Hans_Mods.TerrarAI.hjson": {
+      "sha256": "575d22884a3f39844ca86a2e00a587586662f723ea859f85123aff4878823093"
+    },
+    "README.md": {
+      "sha256": "ce6bfe9fd981aea0e437f6a66ef604117d159af757ceecf2cc7dcb3dcb03ba91"
+    },
+    "THIRD_PARTY_NOTICES.md": {
+      "sha256": "a2966c0ab725c1d327ac6d25f1d0ef4ddee7f5dfe064afb9b4a81f50a441508e"
+    },
+    "TerrarAI.cs": {
+      "sha256": "76ad7f0147460171860e0295c9522fd54373096788bac1571a6b3dc63b51e093"
+    },
+    "TerrarAI.csproj": {
+      "sha256": "9b6ebf268e967181dd54e8c8cbaf86dbc64ccf2e79038c763571b4acafc31976"
+    },
+    "TerrarAI_Config.cs": {
+      "sha256": "e224210eb50c5d0671ad407381262dae74e8d004b5d586f80a918a4ee8fde3fd"
+    },
+    "assets/companion-icon.svg": {
+      "sha256": "4ca53678e8db447ab115b64be67f5aa6f14068a859b9a4e9994a30fccf951f38"
+    },
+    "build.txt": {
+      "sha256": "48cfc7050716549a447cd9617b058d5cd1592fb24ea93c92a4c6523bd90bc10b"
+    },
+    "description.txt": {
+      "sha256": "52df5827ef5712fd10b4ec7b21f0b997eaa396b866e70944a4831117711ef4b1"
+    },
+    "description_workshop.txt": {
+      "sha256": "8db511b9bdf23482d47f3636ce40d055c3345b016292012cb381f427016b4658"
+    },
+    "docs/source-replacement.md": {
+      "sha256": "e96a4f68ecd902e1a30bc9bc1990d07a549c17a71069da7fc1083f007fdfb773"
+    },
+    "icon.png": {
+      "sha256": "65087f58927d3871fc25049b9deaeed9382bbc75a566156b8179e7180da61991"
+    },
+    "icon_small.png": {
+      "sha256": "b78d723b4e7ebd55e02ba596920c6aced946cf47408dacba0410647ec290ad4b"
+    },
+    "release/config-compatibility.json": {
+      "sha256": "64c8ef2612000463bcaaafafa79381e2cf8216a2bc85c634ec37906b6b7bac07"
+    },
+    "scripts/analyze_recovery_eval.py": {
+      "sha256": "411213a49578951d18365de3afa59b1c8b6e5514c106237e79610984d86763b0"
+    },
+    "scripts/brain/advisor.py": {
+      "sha256": "105cbfeafb1abc1e459000233bc173d8deca39a061a64ab3b43f494c67b83f87"
+    },
+    "scripts/brain/brain.py": {
+      "sha256": "76dcb98a26fc9974039cd48c6a6f5b521e30dc072b16334caa43c63aa1e2fa05"
+    },
+    "scripts/brain/gamedata.py": {
+      "sha256": "e538954058a03cf13d624ed0e6a39b02b6be255b067e8be14f709c5ebf01dbb0"
+    },
+    "scripts/brain/knowledge.py": {
+      "sha256": "0b0db0ddb8c95b7eb54a08218267d4882fdb8f3c48512a6b335e159f547cd61b"
+    },
+    "scripts/brain/server.py": {
+      "sha256": "7234a0bdb73543e078e854c1b893c8d9669822e7f4cefbd6ec717e5fb68e4757"
+    },
+    "scripts/brain/test_brain.py": {
+      "sha256": "1e87c3f1a139a39a5b8a93adf62b0668bc65931f93ddce326a2dc01d84a4379e"
+    },
+    "scripts/brain/wiki.py": {
+      "sha256": "164091732662c174c9a99a56976f80c2ec26b1eaf75aec1358283c47ca9379b5"
+    },
+    "scripts/build_mod.py": {
+      "sha256": "2b3259d68db3b815596f98257e589a215b9bc523ae2193161c3303cfcfc26bf7"
+    },
+    "scripts/build_windows.py": {
+      "sha256": "9ef16db2ed6e3c37ef03da133a0cf850b503322426621289056a6aa55be45bc8"
+    },
+    "scripts/check_provenance.py": {
+      "sha256": "a1e4e2916c30e3bf2d6290ec3c500788e2113bc37ee2a1dab29d9a47ee83d732"
+    },
+    "scripts/create_icons.py": {
+      "sha256": "1437dacb9ebbf4b7637ba9aea8b9f74ea813c793f93312ca303759bc408cbb54"
+    },
+    "scripts/get_model.py": {
+      "sha256": "2b2ca2f257ab5ed95de5fe1dcad29f475c6938bde14689a72ddd422d1efcf44f"
+    },
+    "scripts/import_calamity_wiki.py": {
+      "sha256": "250347fe5bc4e581da719d3c65d1f54d39cacb7d63e409e84401c94ce193cec6"
+    },
+    "scripts/import_wiki.py": {
+      "sha256": "9fa97114c4faaac4e3ca0ed445fc18dea07294f76fc28efb0bfb26a55f7673e0"
+    },
+    "scripts/play_local.py": {
+      "sha256": "42ba26cbf61eb6df2be3d9cddbe69910515ffffc7b9cc8b7d49daea2f477c819"
+    },
+    "scripts/prepare_github.py": {
+      "sha256": "64c6ba63906515e857eb630cfe10c4859d5ebd0961d56e3bde9cf74058dbfba5"
+    },
+    "scripts/release_alpha.py": {
+      "sha256": "816cf5584fea25d8f15471f6a274deb3b83de5b8b7430383872dac4edd4037c2"
+    },
+    "scripts/release_support.py": {
+      "sha256": "463dcb9ec5f4424ca6a3953445e124c1c43b012a6a04b687f5ee0811e6ec44f4"
+    },
+    "scripts/report_learning.py": {
+      "sha256": "b4e19716393696ab22ee2209c30fc60df78466625b9931a9db62c07c3355c7bb"
+    },
+    "scripts/run_evals.py": {
+      "sha256": "d69039341808b0359358d565a52bcbf1c25396f9bd02b3260dccf0b8ab1d4b80"
+    },
+    "scripts/setup_windows.py": {
+      "sha256": "8fef3c672aaaefd44a7b13e3361ad903e3438c11577da5e0d1df22494d3587bb"
+    },
+    "scripts/start_qwen.py": {
+      "sha256": "44e42d429b78605d430ada1969a732b6ef41117ebbdbdb7c1dd865c5788840fb"
+    },
+    "scripts/verify_alpha.py": {
+      "sha256": "c275b1cbcb9ba7953a096e82d9c5a42f4931a68c42286a3ac1a1103b9f622af8"
+    },
+    "scripts/wiki_html.py": {
+      "sha256": "5b5e5322e48c026961fe9d3e30f621f365063111c25bd43b7c2db9ac78407e61"
+    },
+    "scripts/winpaths.py": {
+      "sha256": "5883884fb04e29c413a8f71397a6acc4ef0386b34b8534ff147f30efbc40b099"
+    }
+  }
+}

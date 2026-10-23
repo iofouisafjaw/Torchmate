@@ -1,0 +1,35 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Project scaffold recreated for the local companion; package target retained from our Alpha tooling. -->
+  <PropertyGroup>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <LangVersion>latest</LangVersion>
+    <EnableDefaultCompileItems>false</EnableDefaultCompileItems>
+    <TModLoaderPath Condition="'$(TModLoaderPath)' == ''">$(MSBuildProjectDirectory)/.runtime/tModLoader</TModLoaderPath>
+  </PropertyGroup>
+  <Import Project="../tModLoader.targets" Condition="Exists('../tModLoader.targets')" />
+  <Import Project="$(TModLoaderPath)/tMLMod.targets" Condition="!Exists('../tModLoader.targets') And Exists('$(TModLoaderPath)/tMLMod.targets')" />
+  <ItemGroup>
+    <Compile Include="Common/**/*.cs;Content/**/*.cs;TerrarAI.cs;TerrarAI_Config.cs" />
+  </ItemGroup>
+    <!-- Override tML's root-directory packaging: only explicit mod inputs enter the package. -->
+    <Target Name="BuildMod" AfterTargets="Build" Condition="'$(BuildMod)' == 'true'">
+        <PropertyGroup>
+            <PackageStage>$(MSBuildProjectDirectory)/.runtime/msbuild-package/TerrarAI</PackageStage>
+            <PackageProfile>$(MSBuildProjectDirectory)/.runtime/msbuild-package/profile</PackageProfile>
+            <PackageOutput>$(PackageProfile)/Mods/TerrarAI.tmod</PackageOutput>
+        </PropertyGroup>
+        <ItemGroup>
+            <PackageInput Include="Common/**/*;Content/**/*;Localization/**/*;TerrarAI.cs;TerrarAI_Config.cs;TerrarAI.csproj;build.txt;description.txt;icon.png;icon_small.png" />
+            <PackageInput Include="LICENSE;THIRD_PARTY_NOTICES.md;LICENSE_STATUS.md;licenses/ImproveGame-MIT.txt" />
+        </ItemGroup>
+        <RemoveDir Directories="$(PackageStage)" />
+        <MakeDir Directories="$(PackageStage);$(MSBuildProjectDirectory)/dist" />
+        <Delete Files="$(PackageOutput)" />
+        <Copy SourceFiles="@(PackageInput)" DestinationFiles="@(PackageInput->'$(PackageStage)/%(Identity)')" />
+        <Exec Command="dotnet &quot;$(tMLPath)&quot; -server -nosteam -build &quot;$(PackageStage)&quot; -eac &quot;$(TargetPath)&quot; -tmlsavedirectory &quot;$(PackageProfile)&quot;"
+              WorkingDirectory="$(tMLSteamPath)" />
+        <Error Condition="!Exists('$(PackageOutput)')" Text="tModLoader did not produce a new TerrarAI.tmod." />
+        <Copy SourceFiles="$(PackageOutput)" DestinationFiles="$(MSBuildProjectDirectory)/dist/TerrarAI.tmod" />
+    </Target>
+</Project>

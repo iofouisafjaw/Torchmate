@@ -1,0 +1,15 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <!-- Offline evaluation of the companion agent against the real local model (no game needed).
+       Runs the same AgentProtocol prompt and AgentLoop control flow the mod uses, with a simulated world. -->
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <InvariantGlobalization>true</InvariantGlobalization>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="../Content/Companion/*.cs" Link="Core/%(Filename)%(Extension)" />
+    <None Include="cases.json" CopyToOutputDirectory="PreserveNewest" />
+  </ItemGroup>
+</Project>

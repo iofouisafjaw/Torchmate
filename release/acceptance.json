@@ -1,0 +1,6 @@
+{
+  "version": "0.10.34",
+  "nativeAcceptancePassed": false,
+  "cleanWindowsInstallPassed": false,
+  "reason": "0.10.34 installed locally and automated checks passed. Gameplay retest and recording were cancelled by the player; native acceptance is incomplete and clean Windows installation remains untested. On 2026-10-23 the owner approved only public GitHub upload of allowlisted, history-free source under MIT to iofouisafjaw/TerrarAI; Windows binary releases remain blocked."
+}

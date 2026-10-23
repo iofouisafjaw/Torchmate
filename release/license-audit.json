@@ -1,0 +1,373 @@
+{
+  "schemaVersion": 2,
+  "checkedAt": "2026-10-23",
+  "publicDistributionApproved": false,
+  "blockers": [
+    {
+      "id": "upstream-code-permission",
+      "status": "resolved",
+      "evidence": "No license-named file in pinned recursive upstream tree; GitHub repository license field is null and license endpoint returned 404. This is an observation, not proof that no separate permission exists. Written permission or replacement is required before redistribution.",
+      "resolution": "Addressed for the current surface by removal/replacement, not by obtaining or inferring upstream permission. See replacementManifest; historical material is not authorized."
+    },
+    {
+      "id": "upstream-icon-permission",
+      "status": "resolved",
+      "evidence": "At the pre-replacement audit, both PNGs were byte-identical to the inherited commit and had no recorded separate permission. They are now replaced; historical hashes remain in the inventory.",
+      "resolution": "Addressed for the current surface by removal/replacement, not by obtaining or inferring upstream permission. See replacementManifest; historical material is not authorized."
+    },
+    {
+      "id": "tracked-dotenv-review",
+      "status": "unresolved",
+      "evidence": "The inherited Git tree tracks .env. Contents were not inspected or copied into audit/release artifacts. Review before any actual public Git push; allowlisted export excludes it."
+    },
+    {
+      "id": "project-license-unassigned",
+      "status": "resolved",
+      "evidence": "Owner explicitly selected MIT on 2026-10-23. Canonical text is in LICENSE; scope and exclusions are in LICENSE_STATUS.md and THIRD_PARTY_NOTICES.md.",
+      "resolution": "MIT assigned to current project-owned material only; no relicense of third-party or historical upstream material, and no publication approval."
+    }
+  ],
+  "upstream": {
+    "repository": "https://github.com/SlothfulDreams/terrar.ai",
+    "commit": "3a0f316962332cf3abab922f247ffa589766362c",
+    "treeUrl": "https://api.github.com/repos/SlothfulDreams/terrar.ai/git/trees/3a0f316962332cf3abab922f247ffa589766362c?recursive=1",
+    "licenseApiUrl": "https://api.github.com/repos/SlothfulDreams/terrar.ai/license",
+    "licenseHttpStatus": 404,
+    "licenseFilesAtPinnedCommit": [],
+    "affectedFiles": [
+      {
+        "path": "Common/Commands/AgentCommand.cs",
+        "upstreamSha256": "abc66a525d70adc34123577b0721833fdb65ca2442a978b733d74dab7289b921",
+        "currentSha256": "558e74f67cd930ddd4d3150ae71fb5437787970fbc847fd6e434c2424712a05c",
+        "modified": true,
+        "preReplacementSha256": "351d023f3188032ca7c307e8e7d3edf45571d995256297724e1bacfa88b85979",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Common/Commands/TestAPICommand.cs",
+        "upstreamSha256": "bb78bd8db93bfbe7d39efbd5a0991ef47f9bd51dfe8f8b63bdfd846e964000f0",
+        "currentSha256": "97fd76f04ea6e8a117313a8ab6433058c8c74804afbcea1dcd939198c65a07a6",
+        "modified": true,
+        "preReplacementSha256": "5a0dae642739230669f3f5f43e927c8064e99198172a51ae94e80b2197e58a8e",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/ActionRegistry.cs",
+        "upstreamSha256": "f2d7b9a4d4fb99b2af051c5f4b1ded07571197768ac484ce06666b37ef50cdc7",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "f2d7b9a4d4fb99b2af051c5f4b1ded07571197768ac484ce06666b37ef50cdc7",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Actions/AgentAction.cs",
+        "upstreamSha256": "ba64ba38ce35adc818a01841e55f56757a75f5bcb71240e30948a4c633056d42",
+        "currentSha256": "2532729b2cb1a8ab4423e28f646339d644452131088dd461155b79ddf44c0149",
+        "modified": true,
+        "preReplacementSha256": "a96364d88691f1cde400bc311e9c344dc6437eaae3a7060aebd8368608e2031d",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/BuildAction.cs",
+        "upstreamSha256": "cb2e2a7b050265746d6d311e9a88143a31aabcfd226a3faf3d60dbdbd42797ef",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "cb2e2a7b050265746d6d311e9a88143a31aabcfd226a3faf3d60dbdbd42797ef",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Actions/ChopAction.cs",
+        "upstreamSha256": "5f51823a5ddf8e78969bc2c64690e4e3711bd318fca4aa76d11618447a3c0c34",
+        "currentSha256": "09de537cf74d1f2ff357d3e2d6cdc39f658920ab239be5a2fb1f6d79d5ae94e0",
+        "modified": true,
+        "preReplacementSha256": "4841c6bcd04e5ce9ba8ccafda7dd04f96eefc400c2312c198724ee46a90c4669",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/CompleteAction.cs",
+        "upstreamSha256": "00e7be2178ff52b4b9c61ff161faec8606c6de84d2b4ca972796ac8164513f8c",
+        "currentSha256": "e04862ff5c1026f4d072a99b630217ad342628c75587016b8a227749549a8c78",
+        "modified": true,
+        "preReplacementSha256": "7d3b5ebf6359555bd5893443f22804466d58a31a25057e9988a21cf399d94b11",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/FailureAction.cs",
+        "upstreamSha256": "7c82d65df7fe1c64c9bd52af0dabc371374aaaa82d2dd7e6ec47acc32e9b21a1",
+        "currentSha256": "398fd77b37aef76637baeeab6728d7b4f78d6e91edca742a98b93e1bf7da3491",
+        "modified": true,
+        "preReplacementSha256": "7c82d65df7fe1c64c9bd52af0dabc371374aaaa82d2dd7e6ec47acc32e9b21a1",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/HellevatorAction.cs",
+        "upstreamSha256": "734a160a2675d2d93e0421b1bb407f282e91dc87a78b5aa2b8010bcf2eb8931d",
+        "currentSha256": "6026e22ed4d642c7302c091071a5dbaf55da795282b7c9decc3028e5c77cd046",
+        "modified": true,
+        "preReplacementSha256": "03527d52cb4f2012de8949d959fabf0a85f2032156aa631657739d59eff52ffb",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/MineAction.cs",
+        "upstreamSha256": "5e0684e56fdae524fdcc68065425b5e221b9c271697ff0b27325fd8779bb3961",
+        "currentSha256": "3ee19dca96f49a223f48d3e31ef555fc09c1e007b6d8551a08fce016902db36d",
+        "modified": true,
+        "preReplacementSha256": "8220f7cf21beedbcd55aa8aa0eb6e41dd854cb587159c52a03e3a67e7eaea503",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/MoveAction.cs",
+        "upstreamSha256": "de18b902bca71c9b7c4e3712c0892598d8ee03b7d8fbaca092b4c2fd0f539e58",
+        "currentSha256": "511e5a76d6d273f3774e3fc5fad0b7be2014c8d3624391ad3efc03f1681dec39",
+        "modified": true,
+        "preReplacementSha256": "35d230fcbf717a90920a32cc55a9ce63c4b73f769512d3e87e15203a7ef5403c",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/SayAction.cs",
+        "upstreamSha256": "9c1040a1277e5d5fed032100f5a7ecb41d07f7249966de863f74dafb18016673",
+        "currentSha256": "92fc36e1b1d8dc7ebeb2705087a1eeeb878de8f1c4500ea2b3d14c0a41e68e9d",
+        "modified": true,
+        "preReplacementSha256": "577b4a1d1fd98300f8d31309d10207e0975656f0161e81f48265a04c4faf651f",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Actions/TileTargetAction.cs",
+        "upstreamSha256": "d07d690089688ff1a8f00b22af8f9c7afa7d1f93f4be1ccae8d77255cd226b6f",
+        "currentSha256": "19eb332a71f0bd39501a4dfab8f4dc16736d6bcdf5836fcacc1f56fe7fb9bd4c",
+        "modified": true,
+        "preReplacementSha256": "d07d690089688ff1a8f00b22af8f9c7afa7d1f93f4be1ccae8d77255cd226b6f",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/NPCs/AIAgentNPC.cs",
+        "upstreamSha256": "4bff426cc07a31317a2acfdea09aea874386b6a51a0400335459527050d73a42",
+        "currentSha256": "0094faaccce7e3c4623828a415115afda2ad4972c03b18a6d8d8e67e6623afe6",
+        "modified": true,
+        "preReplacementSha256": "31f4b1ba21bea17dd2b19fb2a1a56069b6073ece3ef3e8545189d1691fa8eaf6",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/NPCs/AIAgentRenderer.cs",
+        "upstreamSha256": "be978e5bd77f3b7b00cd5e5b1dbd3a1866578f9202c748bb053c8c7cdb314dbb",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "be978e5bd77f3b7b00cd5e5b1dbd3a1866578f9202c748bb053c8c7cdb314dbb",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Players/SharedLifePlayer.cs",
+        "upstreamSha256": "7e6dac177a50fa84042be41042426694ffc89cbda85f3bcaa825e89d6648b9f1",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "7e6dac177a50fa84042be41042426694ffc89cbda85f3bcaa825e89d6648b9f1",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Systems/ActionParameterReader.cs",
+        "upstreamSha256": "bc0f34857a7d2995088d54bc0094371de5dc808eb9c7343109a88e4d5c1acca2",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "bc0f34857a7d2995088d54bc0094371de5dc808eb9c7343109a88e4d5c1acca2",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Systems/ActionParser.cs",
+        "upstreamSha256": "90635d4f2b401359b44e083eebc09c1302bcbe76c687dd187b2e620716683a76",
+        "currentSha256": "c27070ca440f0e2e1a8f612597e3c954ae0908ae2a8dbe93669d38e8c1e95d7c",
+        "modified": true,
+        "preReplacementSha256": "a03c9b2bf7393d40a8c39ebeb48a014306e1247d72e38a2101ec0e176341fb70",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/ActionValidator.cs",
+        "upstreamSha256": "cf035d3582b16fcd6609601d684e13a014193ce92f615ecc8fe490c1117a7777",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "cf035d3582b16fcd6609601d684e13a014193ce92f615ecc8fe490c1117a7777",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Systems/ChatCoordinator.cs",
+        "upstreamSha256": "588694c16a03d00fd39b760d44b80664afbf78b29ff4a34eb188997c4da71b34",
+        "currentSha256": "6fe2db321988b75f501cd375a05fe48f408bc3c1d1b5d92817d38318558de172",
+        "modified": true,
+        "preReplacementSha256": "96859541a5d2a46e1d2965ecebf97833e08cc018ec0822d60fe7ef9e150923d3",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/MovementHelper.cs",
+        "upstreamSha256": "4f43e9c25cb664d636072d28c473f86a03ee4a67c329d7b7ae8d95c168ba0cbc",
+        "currentSha256": "168e0ed4c19af1ec5e6394399f8c82e6248cc5388b1a0a77ec16df5551716aec",
+        "modified": true,
+        "preReplacementSha256": "77a75cc9e281817f2a5e838d948946f55c62312382b05b322e28bf40f3cd4421",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/MultiAgentCoordinator.cs",
+        "upstreamSha256": "9d5b8dc2e473b6c823577ed43df2ef65469c56a10c46c854cd984e0fd7820da4",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "9d5b8dc2e473b6c823577ed43df2ef65469c56a10c46c854cd984e0fd7820da4",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Systems/ServerAuthority.cs",
+        "upstreamSha256": "758b3f642d9ef8fee6e00f5a345800ed4fcf6f21f66a0352b03e9e01bde98a81",
+        "currentSha256": "6a16462d0a31c9456faea2cab4c7e0d69d7d90b343eb8250739d5a4059984db2",
+        "modified": true,
+        "preReplacementSha256": "284e6acb4c108d78d2476748022656424f23cb76344979915dfef849efba11b4",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/ToolSelector.cs",
+        "upstreamSha256": "9bb19c277007124a0475a6925018da4491a969759f3026a55ee73d0ca5c217ea",
+        "currentSha256": "57ed1b3c17754f7591e8049c2b899748c94092cba6e3457a25123b498532109c",
+        "modified": true,
+        "preReplacementSha256": "6d7d9b9d296d4370e487f5b67fd1712a8c19f2b9426545c4156cdcca1022a2d1",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/TreeHelper.cs",
+        "upstreamSha256": "bb6e7c54f8b6055de78b3a34a1111a3a8230d4bfd1fadfb5008ff1a7aa41cb94",
+        "currentSha256": "62efb40aec172b7efe0353e08a08f211ab65aaaed6942221355cfbb7e4a1ef23",
+        "modified": true,
+        "preReplacementSha256": "60bf6d910802065b20acd9bb54f32ce1600253088bba0de4111b622114339b22",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "Content/Systems/WorldContext.cs",
+        "upstreamSha256": "ad327b25b3a286fea151c4987b7391e7079e07b401ce59f3a60203e3baf2b03a",
+        "currentSha256": null,
+        "modified": false,
+        "preReplacementSha256": "ad327b25b3a286fea151c4987b7391e7079e07b401ce59f3a60203e3baf2b03a",
+        "disposition": "removed"
+      },
+      {
+        "path": "Content/Systems/XAIClient.cs",
+        "upstreamSha256": "3e66da5554aa34f7055b2dc979a0e7ec0ff51735f007626f52f28d6a985aa0de",
+        "currentSha256": "dde90be7455910c12f37c823bc81a67846b6774f00991a54c90a8a3b89b00721",
+        "modified": true,
+        "preReplacementSha256": "98fd79020d601cb0563e74af693c7ccf4fe028caf05360254c174ebe68bfe03d",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "TerrarAI.cs",
+        "upstreamSha256": "95738d0bd76685f7a96ebf1b04f8540864ab3371a38194cb940a99616ab9ba58",
+        "currentSha256": "76ad7f0147460171860e0295c9522fd54373096788bac1571a6b3dc63b51e093",
+        "modified": true,
+        "preReplacementSha256": "95738d0bd76685f7a96ebf1b04f8540864ab3371a38194cb940a99616ab9ba58",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "TerrarAI_Config.cs",
+        "upstreamSha256": "97564b1d5343561f804f1cdac57bf25fe23917fa9a4d83aca33667c8188710ab",
+        "currentSha256": "e224210eb50c5d0671ad407381262dae74e8d004b5d586f80a918a4ee8fde3fd",
+        "modified": true,
+        "preReplacementSha256": "16878f26e3294661cb74403d10a0988ee1866b56deaed8627856970078a0698f",
+        "disposition": "replacement-implementation-or-compatible-declaration"
+      },
+      {
+        "path": "icon.png",
+        "upstreamSha256": "3b1eec040eeab7bf9ff06a30f8cc786ace431f7a7d985da885bc8b08145f1ade",
+        "currentSha256": "65087f58927d3871fc25049b9deaeed9382bbc75a566156b8179e7180da61991",
+        "modified": true,
+        "preReplacementSha256": "3b1eec040eeab7bf9ff06a30f8cc786ace431f7a7d985da885bc8b08145f1ade",
+        "disposition": "replaced-artwork"
+      },
+      {
+        "path": "icon_small.png",
+        "upstreamSha256": "12819e261f45dbc117b742a14b3a6a49f84bb31c1d6a9a24ad0d203833fc59ce",
+        "currentSha256": "b78d723b4e7ebd55e02ba596920c6aced946cf47408dacba0410647ec290ad4b",
+        "modified": true,
+        "preReplacementSha256": "12819e261f45dbc117b742a14b3a6a49f84bb31c1d6a9a24ad0d203833fc59ce",
+        "disposition": "replaced-artwork"
+      }
+    ]
+  },
+  "dependencies": [
+    {
+      "name": "ImproveGame / Quality of Terraria",
+      "use": "Adapted place-style switch in Content/Systems/Vendor/QotPlaceStyle.cs",
+      "status": "license-found",
+      "license": "MIT",
+      "commit": "5f25aad630df6bc0a700771deb333bb47b4c05ef",
+      "licenseBlob": "da8d141a813bd4e85918ddfe403dafcf6f77cb30",
+      "sourceUrl": "https://github.com/487666123/ImproveGame/blob/5f25aad630df6bc0a700771deb333bb47b4c05ef/Helpers/PlaceStyleHelper.cs",
+      "licenseUrl": "https://github.com/487666123/ImproveGame/blob/5f25aad630df6bc0a700771deb333bb47b4c05ef/LICENSE",
+      "localLicense": "licenses/ImproveGame-MIT.txt",
+      "requirements": "Retain MIT license and copyright in source and accompanying binary notices."
+    },
+    {
+      "name": "llama.cpp b11609",
+      "use": "External downloaded runtime, not bundled in Alpha kit",
+      "status": "license-found",
+      "license": "MIT",
+      "licenseUrl": "https://github.com/ggml-org/llama.cpp/blob/b11609/LICENSE",
+      "localLicense": "licenses/llama.cpp-MIT.txt"
+    },
+    {
+      "name": "Qwen3 official 14B/8B GGUF",
+      "use": "Optional separately downloaded model; commit/size/hash pinned in dependencies.lock.json",
+      "status": "license-found",
+      "license": "Apache-2.0",
+      "localLicense": "licenses/Qwen3-Apache-2.0.txt",
+      "modelEvaluations": "14B has prior offline recovery evaluation; 8B has not been re-evaluated for this Alpha"
+    },
+    {
+      "name": "CUDA DLLs / NVIDIA driver",
+      "use": "External optional CUDA runtime asset from pinned llama.cpp release",
+      "status": "separate-vendor-terms",
+      "bundled": false,
+      "licenseUrl": "https://docs.nvidia.com/cuda/eula/index.html"
+    },
+    {
+      "name": "Wiki text and SQLite indexes",
+      "use": "Optional user-local RAG corpus",
+      "status": "not-bundled",
+      "requirements": "Importers retain source metadata, citation and license; no local database/page cache is exported. Do not infer one blanket Wiki license."
+    },
+    {
+      "name": "Terra / TerraGuardians",
+      "use": "Prior design review only, not the root code origin",
+      "status": "reference-only",
+      "requirements": "This audit does not use their license to authorize inherited terrar.ai code. Prior reference-only audit does not cover QotPlaceStyle vendor adaptation."
+    },
+    {
+      "name": "Terraria / tModLoader / optional game mods",
+      "use": "User installs separately; in-game native rendering/data and soft dependency APIs",
+      "status": "not-bundled",
+      "requirements": "No game binaries, game textures or optional mod assemblies are exported."
+    }
+  ],
+  "licenseTextSha256": {
+    "licenses/ImproveGame-MIT.txt": "f83a767a6196e561a9f5043532aa29f31211b86767615f71b654bee9c68408fa",
+    "licenses/llama.cpp-MIT.txt": "94f29bbed6a22c35b992c5c6ebf0e7c92f13b836b90f36f461c9cf2f0f1d010d",
+    "licenses/Qwen3-Apache-2.0.txt": "5de36594c10839788a8c589443a8ef9d8b8d17c65a1b5807206ae037fc36c6bd",
+    "LICENSE": "2ea590ac04d82b7aa17c0d09db6ffd50995244f22ea3e2b56e6c3cc9d60c0afc"
+  },
+  "workshop": {
+    "status": "not-cleared",
+    "url": "https://store.steampowered.com/workshopeula/1281930/",
+    "evidence": "External local-service dependency needs separate rules review; no Workshop claim or upload is made."
+  },
+  "replacementManifest": "release/source-provenance.json",
+  "replacementVersion": "0.10.30",
+  "projectLicense": {
+    "spdxId": "MIT",
+    "path": "LICENSE",
+    "selectedAt": "2026-10-23",
+    "copyright": "Copyright (c) 2026 TerrarAI contributors",
+    "scope": "Current project-owned code, documentation, tests and original artwork; third-party terms and historical upstream exclusions remain in force.",
+    "publicationApproved": true,
+    "publicationScope": "allowlisted-history-free-source only; Windows binary release remains blocked"
+  },
+  "sourcePublication": {
+    "approved": true,
+    "approvedAt": "2026-10-23",
+    "scope": "allowlisted-history-free-source",
+    "historyExcluded": true,
+    "repository": "https://github.com/iofouisafjaw/TerrarAI",
+    "evidence": "Owner requested upload, selected a public repository in the session, chose MIT, and explicitly selected the iofouisafjaw account. Windows binary, gameplay and clean-install acceptance are not approved by this source-only instruction."
+  }
+}

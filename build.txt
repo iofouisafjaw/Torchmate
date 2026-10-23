@@ -1,0 +1,4 @@
+displayName = TerrarAI Local Companion
+author = TerrarAI contributors
+version = 0.10.34
+buildIgnore = .runtime/*, .models/*, benchmarks/*, tests/*, scripts/*, .git/*, .env*, bin/*, obj/*, dist/*, v0.*/*, docs/*, *.bat

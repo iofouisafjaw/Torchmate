@@ -1,0 +1,81 @@
+{
+  "Keybinds": {
+    "OpenChat": {
+      "DisplayName": "打开／关闭 Qwen 对话窗口"
+    }
+  },
+  "NPCs": {
+    "AIAgentNPC": {
+      "DisplayName": "Qwen 同伴"
+    }
+  },
+  "Configs": {
+    "TerrarAI_Config": {
+      "DisplayName": "本地 Qwen 同伴",
+      "BaseEndpoint": {
+        "Label": "本地模型地址"
+      },
+      "Model": {
+        "Label": "模型别名"
+      },
+      "ApiKey": {
+        "Label": "可选 API 密钥",
+        "Tooltip": "使用项目自带的本地服务时留空。"
+      },
+      "Temperature": {
+        "Label": "温度"
+      },
+      "MaxOutputTokens": {
+        "Label": "最大输出 token 数"
+      },
+      "MaxDecisionSteps": {
+        "Label": "每条指令的最大决策次数"
+      },
+      "RequestTimeoutSeconds": {
+        "Label": "请求超时（秒）"
+      },
+      "MaxPlanningSeconds": {
+        "Label": "规划超时（秒）"
+      },
+      "EnableCreativeMode": {
+        "Label": "创造模式工具和材料",
+        "Tooltip": "启用原项目的创造模式移动和无限材料。"
+      },
+      "EnableVerboseLogging": {
+        "Label": "详细诊断日志"
+      },
+      "EnableAutomaticDefense": {
+        "Label": "跟随时自动反击",
+        "Tooltip": "跟随且没有其他工作时，近身处理靠近的小怪。保护我和清怪指令仍可手动启动；不攻击城镇NPC、宠物和Boss。"
+      },
+      "EnableReminders": {
+        "Label": "主动提醒",
+        "Tooltip": "天黑、血月、低血量和主背包快满时提示。任何两条至少间隔60秒，同类新一轮至少间隔5分钟；不打断任务。"
+      },
+      "EnableNightReminders": {
+        "Label": "天黑提醒",
+        "Tooltip": "白天转为夜晚时提醒一次；进世界时已经是普通夜晚不补发。血月提醒开启时合并成一条血月提示。"
+      },
+      "EnableBloodMoonReminders": {
+        "Label": "血月提醒",
+        "Tooltip": "每轮血月提示一次；进入世界时正在发生的血月也可提示。"
+      },
+      "EnableLowHealthReminders": {
+        "Label": "低血量提醒",
+        "Tooltip": "生命不高于30%时提示一次，恢复到至少45%后才重新计次；自动治疗由单独开关控制，治疗提示会避免重复警告。"
+      },
+      "EnableInventoryReminders": {
+        "Label": "背包快满提醒",
+        "Tooltip": "50格主背包剩余不超过3个空位时提示一次，恢复到至少8个空位后重新计次；不含钱币、弹药和额外仓库。"
+      },
+      "EnableAutomaticHealing": {
+        "Label": "低血量自动使用治疗药水",
+        "Tooltip": "默认开启；同伴在场时使用50格主背包中未收藏的原版治疗／恢复药水，遵守游戏原生冷却。优先不溢出的药水；没有合适小药时，仅允许轻微溢出，生命≤15%才紧急使用大药。不取箱子，与提醒开关独立。"
+      },
+      "AutoHealingThresholdPercent": {
+        "Label": "自动治疗生命阈值（%）",
+        "Tooltip": "默认30%，可设10%–50%；按当前有效生命上限计算。药水冷却、物品禁用、暂停、死亡时不使用。"
+      }
+    }
+  }
+}

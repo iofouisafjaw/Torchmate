@@ -1,0 +1,24 @@
+{
+  "base_url": "https://terraria.wiki.gg/zh/wiki/",
+  "game_version": "1.4.4.9",
+  "snapshot": "v0.1.0 · 2025-12-01 打包归档（HTML 文件时间 2025-07-22—2025-11-26）",
+  "version_evidence": "按归档内容核验：电脑版版本历史的最新条目为 1.4.4.9，无 1.4.5 条目；HTML 文件时间为 2025-07-22 至 2025-11-26，便携程序打包于 2025-12-01，作者网盘分卷发布于 2025-12-04，早于 1.4.5 的 2026-01-27 发布。属于 1.4.4.9 时期的原版中文 Wiki 快照；文件时间并非 Wiki 修订时间，未逐条认证。",
+  "archive": "TerrariaWiki_v0.1.0_Windows_x64_Portable.zip + .z01 + .z02",
+  "archive_members": {
+    "TerrariaWiki_v0.1.0_Windows_x64_Portable.z01": {
+      "bytes": 1073741824,
+      "sha256": "6bf4c630e7d1bda2eb8530d247bc674d62160a8d26eafd28bc35cc369f9deea4"
+    },
+    "TerrariaWiki_v0.1.0_Windows_x64_Portable.z02": {
+      "bytes": 1073741824,
+      "sha256": "b706e1ee528d568da0d39e59441acbd40f832406fa4ed5be18eead1537db671e"
+    },
+    "TerrariaWiki_v0.1.0_Windows_x64_Portable.zip": {
+      "bytes": 507580134,
+      "sha256": "98bec8e9b26d9fd043271ab1951004dd119ce1990c903cb456951f1b14495613"
+    }
+  },
+  "wiki_revision_ids": "not present in legacy HTML; not inferred from file mtime",
+  "version_history_source": "https://terraria.wiki.gg/zh/wiki/电脑版版本历史",
+  "next_release_source": "https://terraria.wiki.gg/wiki/1.4.5.0"
+}

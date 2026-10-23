@@ -1,0 +1,14 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <Nullable>enable</Nullable>
+    <ImplicitUsings>enable</ImplicitUsings>
+  </PropertyGroup>
+  <ItemGroup>
+    <None Update="fixtures/arena-native-projection.json" CopyToOutputDirectory="PreserveNewest" />
+    <Compile Remove="game_smoke/**;interaction_smoke/**;supply_smoke/**;supply_client/**;recovery_adapter/**;recovery_eval/**;collaboration_adapter/**;collaboration_wiring/**;native_replacement/**;terrain_route/**;tunnel_workshop/**" />
+    <Compile Include="../Content/Companion/*.cs" Link="Core/%(Filename)%(Extension)" />
+    <Compile Include="../evals/FakeWorld.cs" Link="Evals/FakeWorld.cs" />
+  </ItemGroup>
+</Project>

@@ -1,0 +1,10 @@
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <OutputType>Exe</OutputType><TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <TModLoaderPath Condition="'$(TModLoaderPath)' == ''">$(MSBuildProjectDirectory)/../../.runtime/tModLoader</TModLoaderPath>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="Mono.Cecil"><HintPath>$(TModLoaderPath)/Libraries/mono.cecil/0.11.6/lib/netstandard2.0/Mono.Cecil.dll</HintPath></Reference>
+  </ItemGroup>
+</Project>

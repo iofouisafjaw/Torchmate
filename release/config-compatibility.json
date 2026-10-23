@@ -1,0 +1,96 @@
+{
+  "configType": "TerrarAI.TerrarAI_Config",
+  "scope": "ServerSide",
+  "fields": {
+    "BaseEndpoint": {
+      "type": "string",
+      "defaultLiteral": "\"http://127.0.0.1:8080/v1/chat/completions\"",
+      "attributes": "[DefaultValue(\"http://127.0.0.1:8080/v1/chat/completions\")]"
+    },
+    "Model": {
+      "type": "string",
+      "defaultLiteral": "\"qwen3-4b\"",
+      "attributes": "[DefaultValue(\"qwen3-4b\")]"
+    },
+    "ApiKey": {
+      "type": "string",
+      "defaultLiteral": "\"\"",
+      "attributes": "[DefaultValue(\"\")]"
+    },
+    "Temperature": {
+      "type": "float",
+      "defaultLiteral": "0.2f",
+      "attributes": "[Range(0f,2f),DefaultValue(0.2f)]"
+    },
+    "MaxOutputTokens": {
+      "type": "int",
+      "defaultLiteral": "128",
+      "attributes": "[Range(48,256),DefaultValue(128)]"
+    },
+    "MaxDecisionSteps": {
+      "type": "int",
+      "defaultLiteral": "8",
+      "attributes": "[Range(1,30),DefaultValue(8)]"
+    },
+    "RequestTimeoutSeconds": {
+      "type": "int",
+      "defaultLiteral": "60",
+      "attributes": "[Range(10,300),DefaultValue(60)]"
+    },
+    "MaxPlanningSeconds": {
+      "type": "int",
+      "defaultLiteral": "90",
+      "attributes": "[Range(30,300),DefaultValue(90)]"
+    },
+    "EnableCreativeMode": {
+      "type": "bool",
+      "defaultLiteral": "false",
+      "attributes": "[DefaultValue(false)]"
+    },
+    "EnableVerboseLogging": {
+      "type": "bool",
+      "defaultLiteral": "false",
+      "attributes": "[DefaultValue(false)]"
+    },
+    "EnableAutomaticDefense": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "EnableAutomaticHealing": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "AutoHealingThresholdPercent": {
+      "type": "int",
+      "defaultLiteral": "30",
+      "attributes": "[Range(10,50),DefaultValue(30)]"
+    },
+    "EnableReminders": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "EnableNightReminders": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "EnableBloodMoonReminders": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "EnableLowHealthReminders": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    },
+    "EnableInventoryReminders": {
+      "type": "bool",
+      "defaultLiteral": "true",
+      "attributes": "[DefaultValue(true)]"
+    }
+  }
+}

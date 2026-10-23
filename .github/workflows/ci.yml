@@ -1,0 +1,53 @@
+name: Source checks
+
+on:
+  push:
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+concurrency:
+  group: source-checks-${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
+jobs:
+  automatic-verification:
+    runs-on: windows-latest
+    timeout-minutes: 20
+    env:
+      DOTNET_CLI_TELEMETRY_OPTOUT: '1'
+      PYTHONUTF8: '1'
+    steps:
+      - uses: actions/checkout@d23441a48e516b6c34aea4fa41551a30e30af803 # v6
+        with:
+          persist-credentials: false
+      - uses: actions/setup-dotnet@26b0ec14cb23fa6904739307f278c14f94c95bf1 # v5
+        with:
+          dotnet-version: 8.0.x
+      - uses: actions/setup-python@ece7cb06caefa5fff74198d8649806c4678c61a1 # v6
+        with:
+          python-version: '3.11'
+      - name: Verify source and export inventory
+        run: python scripts/prepare_github.py --check
+      - name: Python regressions
+        run: python -m unittest discover -s tests -p 'test_*.py'
+      - name: Core and simulated native adapters
+        shell: pwsh
+        run: |
+          $projects = @(
+            'tests/CompanionTests.csproj',
+            'tests/native_replacement/NativeReplacementTests.csproj',
+            'tests/terrain_route/TerrainRouteTests.csproj',
+            'tests/tunnel_workshop/TunnelWorkshopTests.csproj',
+            'tests/recovery_adapter/RecoveryAdapterTests.csproj',
+            'tests/collaboration_adapter/CollaborationAdapterTests.csproj',
+            'tests/recovery_eval/RecoveryEvalTests.csproj'
+          )
+          foreach ($project in $projects) {
+            dotnet run --project $project
+            if ($LASTEXITCODE -ne 0) { exit $LASTEXITCODE }
+          }
+      - name: Validate model-evaluation fixtures without starting a model
+        run: python scripts/run_evals.py --validate

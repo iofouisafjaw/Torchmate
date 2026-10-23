@@ -1,0 +1,120 @@
+{
+  "reviewedAt": "2026-10-15T16:23:04.059237+00:00",
+  "userVideo": "https://www.bilibili.com/video/BV1C35B6JEK6/",
+  "videoTitleProvidedByUser": "泰拉瑞亚百科离线版 | 手机版全新发布 | Terraria Wiki Offline",
+  "videoDirectRead": "Bilibili page/API returned 412; video itself was not viewed",
+  "project": {
+    "url": "https://github.com/BigBearKing/terraria-wiki-offline",
+    "authorBilibiliProfile": "https://space.bilibili.com/470138112",
+    "associationEvidence": "GitHub README author profile UID matches up_id=470138112 in the user-provided share URL",
+    "featuresVerifiedFromReadme": [
+      "Local SQLite keyword search",
+      "WIKIDATA .pkg package header plus JSON file metadata and concatenated member bytes",
+      "WikiPage / WikiRedirect tables",
+      "Text-only and full data packages"
+    ],
+    "codeOrDataCopied": false,
+    "installed": false,
+    "pinnedCommit": "642015203180b49d13710eb609ccb77b45815cf3"
+  },
+  "alternative": {
+    "url": "https://terraria.wiki.gg/wiki/Terraria_Wiki%3AOffline_access",
+    "format": "ZIM",
+    "reader": "Kiwix",
+    "verifiedLanguageOfLinkedLibrary": "English"
+  },
+  "integration": {
+    "status": "0.8.3 installed with actual v0.1.0 Chinese HTML corpus (4020 pages), matching the 1.4.4.9 era. Newer packages inspected and excluded as incompatible.",
+    "proposal": "Local retrieval with article/source/snapshot/game-version metadata; feed only relevant passages to Qwen",
+    "executionAuthority": "Current Terraria runtime determines construction geometry, materials and final audit, not wiki prose",
+    "dataIncludedInTmod": false,
+    "fixtureScope": "Synthetic WikiPage / WIKIDATA fixtures only, isolated tests; not actual Wiki coverage or full-package certification.",
+    "runtimeDependencies": "OS SQLite; no Python service or embedding model during play",
+    "supportedImport": [
+      "WIKIDATA .pkg/.pak with PascalCase or camelCase metadata (mD5 included)",
+      "SQLite WikiPage / legacy Page",
+      "Legacy v0.1.0 wiki-assets / pages directory plus redirect.json"
+    ],
+    "unsupportedImport": [
+      "ZIM"
+    ],
+    "licensing": "Application code license does not cover Wiki contents; retain Terraria Wiki contributors, CC BY-NC-SA 4.0 and source links; no assets imported.",
+    "realCorpusInstalled": true,
+    "verification": "tests/verification-wiki-v010.json"
+  },
+  "formatEvidence": {
+    "packageSource": "https://github.com/BigBearKing/terraria-wiki-offline/blob/642015203180b49d13710eb609ccb77b45815cf3/Terraria_Wiki/Components/Services/PackageService.cs",
+    "schemaSource": "https://github.com/BigBearKing/terraria-wiki-offline/blob/642015203180b49d13710eb609ccb77b45815cf3/Terraria_Wiki/Components/Models/DatabaseModels.cs",
+    "licenseSource": "https://github.com/BigBearKing/terraria-wiki-offline/blob/642015203180b49d13710eb609ccb77b45815cf3/CONTENT_ATTRIBUTION.md",
+    "versionCaution": "AppVersion and UpdateTime are not evidence of a Terraria game version; require explicit provenance before exposing data to Qwen."
+  },
+  "dataAcquisition": {
+    "publicShare": "https://pan.quark.cn/s/9e4116487189",
+    "passcode": "J2zU",
+    "observedLitePackages": [
+      {
+        "release": "0.2.0",
+        "bytes": 168082721
+      },
+      {
+        "release": "0.3.0",
+        "bytes": 173039942
+      }
+    ],
+    "downloadResult": "User downloaded v0.1.0 split ZIP and v0.2.0/v0.3.0 Lite/Full packages to Desktop. Legacy text imported; both newer Lite packages passed member MD5 validation.",
+    "userDecision": "Import downloaded Wiki data, compare versions, use the current-game compatible corpus.",
+    "currentGameVersion": "1.4.4.9",
+    "otherPackages": [
+      {
+        "release": "v0.2.0",
+        "source": "/Users/kantingyuan/Desktop/v0.2.0/资源/Terraria_Wiki(Lite).pkg",
+        "package_metadata": {
+          "Id": 1,
+          "Title": "Terraria Wiki",
+          "IsPageDownloaded": true,
+          "IsResourceDownloaded": false,
+          "UpdateTime": "2026-03-04T01:40:32.8323422",
+          "AppVersion": "0.2.0.2026022418"
+        },
+        "pages": 4273,
+        "desktop_history_latest": [
+          "1.4.5.5",
+          "1.4.5.4",
+          "1.4.5.3",
+          "1.4.5.2",
+          "1.4.5.1",
+          "1.4.5.0",
+          "1.4.4.9",
+          "1.4.4.8.1"
+        ],
+        "matches_current_game": false,
+        "db_member_integrity": "MD5 verified (all package members checked)"
+      },
+      {
+        "release": "v0.3.0",
+        "source": "/Users/kantingyuan/Desktop/v0.3.0/资源包/Terraria_Wiki(Lite).pkg",
+        "package_metadata": {
+          "Id": 1,
+          "Title": "Terraria Wiki",
+          "IsPageDownloaded": true,
+          "IsResourceDownloaded": false,
+          "UpdateTime": "2026-05-13T22:51:23.5311347",
+          "AppVersion": "0.3.0.3"
+        },
+        "pages": 4306,
+        "desktop_history_latest": [
+          "1.4.5.6",
+          "1.4.5.5",
+          "1.4.5.4",
+          "1.4.5.3",
+          "1.4.5.2",
+          "1.4.5.1",
+          "1.4.5.0",
+          "1.4.4.9"
+        ],
+        "matches_current_game": false,
+        "db_member_integrity": "MD5 verified (all package members checked)"
+      }
+    ]
+  }
+}
