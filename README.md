@@ -1,8 +1,8 @@
-# TerrarAI
+# Torchmate · 小火伴
 
 **An on-device LLM companion for Terraria · 一个在本机运行的 Terraria 智能同伴**
 
-[English](#english) · [简体中文](#简体中文) · [CI](https://github.com/iofouisafjaw/TerrarAI/actions/workflows/ci.yml) · [MIT](LICENSE)
+[English](#english) · [简体中文](#简体中文) · [CI](https://github.com/iofouisafjaw/Torchmate/actions/workflows/ci.yml) · [MIT](LICENSE)
 
 **0.10.34 · Source Alpha · Windows x64 · Single-player**
 
@@ -15,6 +15,8 @@ C# / .NET 8 · Python · llama.cpp · Qwen3-14B · JSON Schema · SQLite FTS5
 Give your companion a goal, such as gathering wood, crafting iron armor, or building a three-level platform arena. A local LLM selects tools; deterministic planners budget materials and stations, execute approved work, and verify results against the game. Inference runs locally without a cloud API or automatic cloud fallback.
 
 > **Source Alpha, not a ready-to-install binary release.** Build the mod before running setup. The repository includes no game assemblies, model weights, inference runtime, Wiki database, or saves. Automated checks pass; 0.10.34 gameplay retesting and clean-Windows installation acceptance remain incomplete. No Workshop release is available.
+
+**Compatibility:** Torchmate is the new project and mod display name. The internal mod ID remains `TerrarAI`; `.tmod` filenames, configuration types, and save/data paths keep that identifier so existing installations remain compatible.
 
 ### How the agent works
 
@@ -50,8 +52,8 @@ There are 31 tool names, with bounded implementations rather than arbitrary game
 2. Clone and build. Replace the example tModLoader path with your actual installation:
 
    ```powershell
-   git clone https://github.com/iofouisafjaw/TerrarAI.git
-   cd TerrarAI
+   git clone https://github.com/iofouisafjaw/Torchmate.git
+   cd Torchmate
    python scripts/prepare_github.py --check
    python scripts/build_windows.py --tml "E:\SteamLibrary\steamapps\common\tModLoader" --no-install
    python tests/check_package.py
@@ -146,6 +148,8 @@ For feedback, include the version, actual model, reproduction steps, and short r
 
 > **这是源码 Alpha，尚无开箱即用的二进制发行版。** 先编译模组，再运行安装脚本。仓库不含游戏程序集、模型、推理运行时、Wiki 数据库或存档。自动化检查已通过；0.10.34 实机复测和全新 Windows 安装验收仍未完成，未发布 Workshop。
 
+**改名与兼容：** Torchmate（小火伴）是新的项目名和模组显示名；内部模组 ID 继续使用 `TerrarAI`。`.tmod` 文件名、配置类型和存档／数据路径保持原标识，兼容已有安装。
+
 ### Agent 架构
 
 | 核心机制 | 具体实现 |
@@ -180,8 +184,8 @@ For feedback, include the version, actual model, reproduction steps, and short r
 2. 克隆并编译；将示例路径替换成自己的 tModLoader 安装目录：
 
    ```powershell
-   git clone https://github.com/iofouisafjaw/TerrarAI.git
-   cd TerrarAI
+   git clone https://github.com/iofouisafjaw/Torchmate.git
+   cd Torchmate
    python scripts/prepare_github.py --check
    python scripts/build_windows.py --tml "E:\SteamLibrary\steamapps\common\tModLoader" --no-install
    python tests/check_package.py

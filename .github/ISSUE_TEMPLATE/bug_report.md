@@ -5,9 +5,9 @@ title: "[Alpha] "
 labels: bug
 ---
 
-This is a preparation template. It does not indicate that a public Alpha has been cleared or published.
+Torchmate is a source Alpha; Windows binary and gameplay acceptance remain incomplete. The internal mod ID remains TerrarAI.
 
-- TerrarAI version:
+- Torchmate version (internal mod ID: TerrarAI):
 - Windows and tModLoader versions:
 - Actual GGUF filename (not just the API alias):
 - CPU/CUDA backend and GPU/driver if relevant:

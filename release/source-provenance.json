@@ -575,7 +575,7 @@
       "sha256": "2ea590ac04d82b7aa17c0d09db6ffd50995244f22ea3e2b56e6c3cc9d60c0afc"
     },
     "LICENSE_STATUS.md": {
-      "sha256": "14aefe3df0d880800362f08c4d1017c6fe651f6ae790160fc88673b3f091402b"
+      "sha256": "af0c8263fafaf4a9da7e90c16899b5f69521839abca75c93d733bf1e1e80277b"
     },
     "Localization/en-US_Mods.TerrarAI.hjson": {
       "sha256": "246ee2057f236547fe94a0ddbb96e7d663918b97118956f0b49d10cb69b3a1b4"
@@ -584,10 +584,10 @@
       "sha256": "575d22884a3f39844ca86a2e00a587586662f723ea859f85123aff4878823093"
     },
     "README.md": {
-      "sha256": "64156d539c8eb17c47eb3efe34eef1dd1c764d05e2813a5b1bf422e892a32235"
+      "sha256": "ba25d88d12bf28fcd1d4b839d3bb2f9bf9d2cdb8db5b28990289e2a2618760b9"
     },
     "THIRD_PARTY_NOTICES.md": {
-      "sha256": "a2966c0ab725c1d327ac6d25f1d0ef4ddee7f5dfe064afb9b4a81f50a441508e"
+      "sha256": "19a3aa520658996597bb359536a6851989d25ea7ef895704cc3f5f404b49a17b"
     },
     "TerrarAI.cs": {
       "sha256": "76ad7f0147460171860e0295c9522fd54373096788bac1571a6b3dc63b51e093"
@@ -602,13 +602,13 @@
       "sha256": "4ca53678e8db447ab115b64be67f5aa6f14068a859b9a4e9994a30fccf951f38"
     },
     "build.txt": {
-      "sha256": "48cfc7050716549a447cd9617b058d5cd1592fb24ea93c92a4c6523bd90bc10b"
+      "sha256": "354924f500e0283c77d6932f991532442af4544ceb42abdce753462de09cb229"
     },
     "description.txt": {
-      "sha256": "52df5827ef5712fd10b4ec7b21f0b997eaa396b866e70944a4831117711ef4b1"
+      "sha256": "df3c33e007f4ead365589e5bcea083c8c5c377008ca829c08cf9852481ec03f6"
     },
     "description_workshop.txt": {
-      "sha256": "8db511b9bdf23482d47f3636ce40d055c3345b016292012cb381f427016b4658"
+      "sha256": "026224274f70ee9e5f2d4a116970fa4ca3cf7f5d4643c3ee938ce0c5cf6ccb75"
     },
     "docs/source-replacement.md": {
       "sha256": "e96a4f68ecd902e1a30bc9bc1990d07a549c17a71069da7fc1083f007fdfb773"

@@ -1,4 +1,6 @@
-[h1]TerrarAI — local preparation build[/h1]
-This version is not cleared for Workshop distribution. Historical source/history, project licensing and the external local-model-service deployment rules require review before publication. No Workshop upload is requested or performed.
+[h1]Torchmate (小火伴) — source Alpha[/h1]
+No Workshop release is approved or performed. The external local-model-service deployment rules and player gameplay acceptance still require review before Workshop publication.
 
-The Windows GitHub Alpha preparation uses an external local Qwen3 / llama.cpp service, single-player permission-checked tools, deterministic crafting/building and cooperative tasks. See README.md, LICENSE_STATUS.md and THIRD_PARTY_NOTICES.md for current capabilities, installation prerequisites and release blockers. Models, runtimes and Wiki databases are not bundled.
+The public GitHub source uses MIT for project-owned material and preserves third-party terms. Historical upstream material is excluded. The internal mod ID, configuration and saved-data paths remain TerrarAI for compatibility.
+
+Local Qwen3 / llama.cpp inference powers schema-constrained tools, deterministic execution, verified receipts and bounded failure recovery. See README.md for source build, installation, evaluation scope and known limits. Models, inference runtimes, game files and Wiki databases are not bundled.

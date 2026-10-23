@@ -367,7 +367,10 @@
     "approvedAt": "2026-10-23",
     "scope": "allowlisted-history-free-source",
     "historyExcluded": true,
-    "repository": "https://github.com/iofouisafjaw/TerrarAI",
-    "evidence": "Owner requested upload, selected a public repository in the session, chose MIT, and explicitly selected the iofouisafjaw account. Windows binary, gameplay and clean-install acceptance are not approved by this source-only instruction."
+    "repository": "https://github.com/iofouisafjaw/Torchmate",
+    "evidence": "Owner requested upload, selected a public repository in the session, chose MIT, and explicitly selected the iofouisafjaw account. Windows binary, gameplay and clean-install acceptance are not approved by this source-only instruction.",
+    "previousRepository": "https://github.com/iofouisafjaw/TerrarAI",
+    "renamedAt": "2026-10-23",
+    "renameScope": "Project/repository/display name only; internal TerrarAI identity, saved data and existing copyright notices are retained."
   }
 }

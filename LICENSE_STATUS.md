@@ -1,4 +1,7 @@
-# MIT licensing and publication status
+# Torchmate: MIT licensing and publication status
+
+Torchmate (小火伴) is the current project name; the internal mod ID remains
+`TerrarAI`. Existing contributor copyright notices remain unchanged.
 
 On 2026-10-23 the project owner selected the [MIT License](LICENSE) for the
 current project's own code, documentation, tests and original artwork, including

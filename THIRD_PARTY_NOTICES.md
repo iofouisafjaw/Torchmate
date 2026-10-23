@@ -1,4 +1,4 @@
-# Third-party notices
+# Torchmate: third-party notices
 
 The project's own code, documentation, tests and original icons use the [MIT License](LICENSE), Copyright (c) 2026 TerrarAI contributors. The components below retain their own copyrights and terms; the root license does not supersede them. Publication preparation remains subject to the workflow status in [LICENSE_STATUS.md](LICENSE_STATUS.md).
 

@@ -1,6 +1,6 @@
 # Contributing
 
-TerrarAI is an experimental local companion for single-player Terraria. Current
+Torchmate (小火伴; internal mod ID `TerrarAI`) is an experimental local companion for single-player Terraria. Current
 source publication is being prepared. Its own code, documentation, tests and original
 artwork use the [MIT License](LICENSE); see [LICENSE_STATUS.md](LICENSE_STATUS.md)
 for scope and historical upstream limitations.

@@ -1,5 +1,11 @@
 # Changelog
 
+## Project rename — Torchmate (2026-10-23)
+
+- Rename the public project/repository and mod display name to Torchmate (小火伴). Keep the internal TerrarAI mod ID, namespace, assembly/package names, protocol, configuration and saved-data paths unchanged for compatibility.
+- Update bilingual README clone/CI links and source publication records. Preserve contributor and third-party license notices; no gameplay acceptance or Workshop release is implied.
+
+
 ## 0.10.34 — Demo failure regressions (2026-10-22)
 
 - Prepare a history-free GitHub source snapshot with build/architecture/contribution documentation, pinned Windows CI and export/link/credential-pattern checks. Exclude private evidence and inherited Git history; publication approval remains pending. The owner subsequently selected MIT on 2026-10-23 for current project-owned code, documentation, tests and original icons; third-party notices and historical upstream limitations remain. Include LICENSE in source, Windows and mod packaging with integrity checks. No gameplay retest or upload is performed by preparation.
